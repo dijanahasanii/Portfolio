@@ -215,6 +215,22 @@ section h2::after {
 
 /* Projects Section */
 .projects-grid {
+  .project-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: grid;
+    place-items: center;
+    margin: -35px auto 15px; /* Half outside the card */
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: relative;
+  }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
@@ -292,7 +308,6 @@ section h2::after {
   text-decoration: underline;
 }
 
-/* Contact Section */
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -364,7 +379,6 @@ section h2::after {
   transform: translateY(-3px);
 }
 
-/* Footer */
 footer {
   background: #2d3436;
   color: white;
@@ -400,7 +414,7 @@ footer .container {
   transform: translateY(-3px);
 }
 
-/* Media Queries */
+
 @media (max-width: 992px) {
   .about-content {
     flex-direction: column;
