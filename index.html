@@ -4,180 +4,354 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dijana's Portfolio</title>
+  <title>Dijana Hasani — Full Stack Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Dijana Hasani — Full Stack Developer specializing in React, Next.js, and mobile development. Based in Kosovo.">
+  <meta name="author" content="Dijana Hasani">
+  <meta name="keywords" content="Dijana Hasani, Full Stack Developer, React, Next.js, React Native, Kosovo, Web Developer">
+
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook previews) -->
+  <meta property="og:title" content="Dijana Hasani — Full Stack Developer">
+  <meta property="og:description" content="Full Stack Developer building user-focused web and mobile applications with React, Next.js, Node.js and more.">
+  <meta property="og:image" content="profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dijana Hasani — Full Stack Developer">
+  <meta name="twitter:description" content="Full Stack Developer building user-focused web and mobile applications.">
+  <meta name="twitter:image" content="profile.jpg">
+
+  <!-- Favicon (inline SVG → no file needed) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%237c3aed'/><text x='50' y='68' font-family='Inter,Arial,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'>DH</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Dijana's Portfolio</h1>
+
+  <!-- ─── NAV ─── -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">DH<span class="logo-dot">.</span></a>
       <nav>
         <ul>
-          <li><a href="#about">About Me</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#what-i-do">What I Do</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <!-- ─── HERO ─── -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h2>Hello, I'm Dijana</h2>
-        <p>Computer Science Student & Developer</p>
-        <a href="#projects" class="btn">View My Work</a>
+    <div class="hero-bg-grid"></div>
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Hi, I'm Dijana</p>
+      <h1 class="hero-title">
+        <span class="typed-wrapper"><span id="typed"></span><span class="cursor-blink">|</span></span>
+      </h1>
+        <p class="hero-sub">Full Stack Developer building clean, purposeful web &amp; mobile software.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="cv.html" target="_blank" class="btn btn-ghost">View CV</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/dijanahasanii" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:dijanahasani14@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <i class="fas fa-arrow-down"></i>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section-fade">
+    <div class="container about-grid">
+      <div class="about-img-wrap">
+        <img src="profile.jpg" alt="Dijana Hasani" class="profile-pic">
+        <div class="about-img-deco"></div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Me</span>
+        <h2>Turning ideas into<br>working software.</h2>
+        <p>I'm a Full-Stack Developer with a passion for building user-focused web and mobile applications. I specialize in frontend development using React, Next.js, and Tailwind CSS, but I also enjoy working across the stack with Node.js, Express, and Supabase.</p>
+        <p>I have experience creating responsive, interactive, and accessible interfaces, and I love turning complex ideas into intuitive digital experiences.</p>
+        <a href="cv.html" target="_blank" class="btn btn-primary">View Resume</a>
       </div>
     </div>
   </section>
 
-  <section id="about">
+  <!-- ─── WHAT I DO ─── -->
+  <section id="what-i-do" class="section-fade">
     <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="profile.jpg" alt="Dijana" class="profile-pic">
-        <div class="about-text">
-          <p>I am a third-year Computer Science and Engineering student at Isa Boletini University in Mitrovica. With a strong foundation in mathematics and programming, I am focused on developing practical skills and preparing for a master's degree.</p>
-          <p>My interests include problem-solving, critical thinking, and staying current with emerging technologies.</p>
-          <a href="CV.pdf" download class="btn">Download Resume</a> 
+      <span class="section-label centered">What I Do</span>
+      <h2 class="section-title">Areas of focus</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <h3>Web Development</h3>
+          <p>Crafting responsive, accessible web experiences with React, Next.js, Tailwind CSS, and clean JavaScript.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Development</h3>
+          <p>Building cross-platform mobile apps with React Native and Expo — fast, native-feel, and production-ready.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>UI / UX Thinking</h3>
+          <p>Designing interfaces that feel intuitive — translating requirements into smooth, user-centered flows.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-terminal"></i></div>
+          <h3>Problem Solving</h3>
+          <p>Applying algorithmic thinking and data structures to tackle complex engineering challenges.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="skills">
+  <!-- ─── SKILLS ─── -->
+  <section id="skills" class="section-fade">
     <div class="container">
-      <h2>Skills</h2>
+      <span class="section-label centered">Skills</span>
+      <h2 class="section-title">Tech stack</h2>
       <div class="skills-container">
         <div class="skill-category">
-          <h3>Programming</h3>
+          <h3>Languages &amp; Core</h3>
           <div class="skill-item">
-            <p>Python</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%"></div>
-            </div>
+            <div class="skill-meta"><span>JavaScript</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
           </div>
           <div class="skill-item">
-            <p>Java</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 75%"></div>
-            </div>
+            <div class="skill-meta"><span>HTML / CSS</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
           </div>
           <div class="skill-item">
-            <p>JavaScript</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 70%"></div>
-            </div>
+            <div class="skill-meta"><span>Python</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Web Development</h3>
+          <h3>Frontend &amp; Mobile</h3>
           <div class="skill-item">
-            <p>HTML/CSS</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
+            <div class="skill-meta"><span>React</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
           </div>
           <div class="skill-item">
-            <p>React</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 65%"></div>
-            </div>
+            <div class="skill-meta"><span>Next.js</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span>React Native</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3>Mobile Development</h3>
+          <h3>Backend &amp; Tools</h3>
           <div class="skill-item">
-            <p>React Native</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 80%"></div>
-            </div>
+            <div class="skill-meta"><span>Node.js / Express</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
           </div>
           <div class="skill-item">
-            <p>Expo</p>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 75%"></div>
-            </div>
+            <div class="skill-meta"><span>Supabase</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-meta"><span>MongoDB</span><span>65%</span></div>
+            <div class="skill-bar"><div class="skill-level" style="width: 65%"></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects">
+  <!-- ─── EXPERIENCE ─── -->
+  <section id="experience" class="section-fade">
     <div class="container">
-      <h2>Projects</h2>
+      <span class="section-label centered">Experience</span>
+      <h2 class="section-title">Education &amp; Background</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Sep 2025 — Present</span>
+            <h3>Full Stack Developer</h3>
+            <p class="timeline-place">AlphAEcho · Prishtina, Kosovo</p>
+            <p>Developing and maintaining full-stack web applications using React, Next.js, Tailwind CSS, and Supabase. Collaborating on UI/UX design, implementing responsive interfaces, and contributing to debugging, testing, and feature development.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025</span>
+            <h3>Certification — Web Application Development</h3>
+            <p class="timeline-place">ICT Kosova · Professional</p>
+            <p>Completed professional certification in Web Application Development, covering modern frontend frameworks, backend integration, and production deployment practices.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 — 2025</span>
+            <h3>BSc Computer Science &amp; Engineering</h3>
+            <p class="timeline-place">Isa Boletini University · Mitrovica, Kosovo</p>
+            <p>Studied algorithms, data structures, software engineering, databases, and mobile development. Key academic project published on LinkedIn; strong focus on practical, project-based learning.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="projects" class="section-fade">
+    <div class="container">
+      <span class="section-label centered">Projects</span>
+      <h2 class="section-title">Selected work</h2>
       <div class="projects-grid">
-        <!-- Personal Safety App (NO LOGO) -->
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="medpal.png" alt="MedPal">
+            <div class="project-overlay">
+              <a href="https://github.com/dijanahasanii/MedPal" target="_blank" class="overlay-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <button class="overlay-link demo-btn" onclick="openDemo()">
+                <i class="fas fa-play"></i> Watch Demo
+              </button>
+            </div>
+          </div>
+          <div class="project-details">
+            <h3>MedPal</h3>
+            <p>A digital health management platform for clinics, doctors, and patients. Supports appointment booking, medical reports, schedules, and role-based dashboards for three user types.</p>
+            <div class="tech-used">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
         <div class="project-card">
           <div class="project-image">
             <img src="project1.jpg" alt="Personal Safety App">
+            <div class="project-overlay">
+              <a href="https://github.com/dijanahasanii/PersonalSafetyApp" target="_blank" class="overlay-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <button class="overlay-link demo-btn" onclick="openSafetyDemo()">
+                <i class="fas fa-play"></i> Watch Demo
+              </button>
+            </div>
           </div>
           <div class="project-details">
             <h3>Personal Safety App</h3>
-            <p>A mobile app built using React Native that helps users stay safe with emergency features and location sharing.</p>
+            <p>A cross-platform mobile app with emergency features, real-time location sharing, and SOS alerts — built to keep users safe when it matters most.</p>
             <div class="tech-used">
               <span>React Native</span>
               <span>Expo</span>
               <span>JavaScript</span>
             </div>
-            <a href="https://github.com/dijanahasanii/PersonalSafetyApp" target="_blank" class="project-link">View on GitHub</a>
           </div>
         </div>
-  
-        <!-- Portfolio Website (WITH LOGO) -->
-        <div class="project-card">
-          <div class="project-details">
-            <img src="project.2.png" alt="Portfolio">
-            <h3>Portfolio Website</h3>
-            <p>This responsive portfolio website showcasing my skills and projects, built with HTML, CSS, and JavaScript.</p>
-            <div class="tech-used">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-            <a href="https://github.com/dijanahasanii/Portfolio" target="_blank" class="project-link">View on GitHub</a>
-          </div>
-        </div>
+
+
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="section-fade">
     <div class="container">
-      <h2>Contact</h2>
-      <p>If you'd like to get in touch with me, feel free to reach out:</p>
+      <span class="section-label centered">Contact</span>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="section-sub">Have a project in mind or just want to say hi? My inbox is open.</p>
 
-      <div class="contact-container">
-        <form action="https://formspree.io/f/mdkejrbn" method="POST" class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-
+      <div class="contact-container contact-centered">
         <div class="contact-info">
-          <h3>Let's Connect</h3>
-          <p><i class="fas fa-envelope"></i> dijanahasani14@gmail.com</p>
-          <p><i class="fas fa-phone"></i> +383 45635050</p>
+          <h3>Get in touch</h3>
+          <a href="mailto:dijanahasani14@gmail.com" class="contact-item">
+            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+            <span>dijanahasani14@gmail.com</span>
+          </a>
+          <a href="tel:+38345635050" class="contact-item">
+            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+            <span>+383 45 635 050</span>
+          </a>
+          <a href="https://github.com/dijanahasanii" target="_blank" class="contact-item">
+            <span class="contact-icon"><i class="fab fa-github"></i></span>
+            <span>github.com/dijanahasanii</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="contact-item">
+            <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+            <span>linkedin.com/in/dijana-hasani</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ─── FOOTER ─── -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Dijana. All Rights Reserved.</p>
-      <div class="back-to-top">
-        <a href="#"><i class="fas fa-arrow-up"></i></a>
-      </div>
+    <div class="container footer-inner">
+      <span class="logo">DH<span class="logo-dot">.</span></span>
+      <p>&copy; 2026 Dijana Hasani. All rights reserved.</p>
+      <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
     </div>
   </footer>
+
+  <!-- ─── SAFETY APP VIDEO MODAL ─── -->
+  <div id="safety-modal" class="modal-backdrop" onclick="closeSafetyDemo(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeSafetyDemo()">&times;</button>
+      <div class="modal-video">
+        <video id="safety-video" controls playsinline style="width:100%;height:100%;position:absolute;inset:0;object-fit:contain;background:#000;">
+          <source src="safety-demo.mov" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── VIDEO MODAL ─── -->
+  <div id="demo-modal" class="modal-backdrop" onclick="closeDemo(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeDemo()">&times;</button>
+      <div class="modal-video">
+        <iframe id="demo-iframe"
+          src=""
+          title="MedPal Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

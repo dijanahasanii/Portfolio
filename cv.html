@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dijana Hasani — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:       #0f0f14;
+      --ink-2:     #3a3a50;
+      --ink-3:     #7070a0;
+      --accent:    #7c3aed;
+      --accent-lt: #ede9fe;
+      --rule:      #e8e8f0;
+      --bg:        #ffffff;
+      --sidebar:   #faf9ff;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e8e8f0;
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-bar {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .print-bar button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .print-bar button:hover { background: #6d28d9; }
+
+    @media print { .print-bar { display: none; } }
+
+    /* ── PAGE ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 32px auto;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      overflow: hidden;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; width: 100%; min-height: 100vh; }
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--sidebar);
+      border-right: 1px solid var(--rule);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .sidebar-name {
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 24px;
+    }
+
+    .sidebar-name h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .sidebar-name .role {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .sb-section h2 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 14px;
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-list li {
+      font-size: 0.75rem;
+      color: var(--ink-2);
+      word-break: break-all;
+      line-height: 1.4;
+    }
+
+    .contact-list li span.label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--ink-3);
+      margin-bottom: 1px;
+    }
+
+    /* Skills sidebar tags */
+    .skill-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-tags .tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .skill-tags .tag-label {
+      font-size: 0.75rem;
+      color: var(--ink-2);
+      white-space: nowrap;
+    }
+
+    .skill-tags .tag-bar {
+      flex: 1;
+      height: 3px;
+      background: var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .skill-tags .tag-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+
+    /* Soft skills / languages list */
+    .plain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .plain-list li {
+      font-size: 0.75rem;
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .plain-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Summary */
+    .summary p {
+      font-size: 0.875rem;
+      color: var(--ink-2);
+      line-height: 1.75;
+    }
+
+    /* Section */
+    .cv-section h2 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Experience / Education entries */
+    .entry {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0 20px;
+      margin-bottom: 22px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-date {
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      font-weight: 500;
+      padding-top: 2px;
+      white-space: nowrap;
+    }
+
+    .entry-body h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .entry-body .entry-place {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .entry-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .entry-body ul li {
+      font-size: 0.8rem;
+      color: var(--ink-2);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .entry-body ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Certifications pill */
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--accent-lt);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .cert-item .cert-text h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .cert-item .cert-text p {
+      font-size: 0.75rem;
+      color: var(--ink-3);
+      margin-top: 2px;
+    }
+
+    /* Interests */
+    .interests-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .interest-tag {
+      background: var(--sidebar);
+      border: 1px solid var(--rule);
+      color: var(--ink-2);
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>Open in browser, then print or save as PDF (File → Print → Save as PDF)</span>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-name">
+      <h1>Dijana<br>Hasani</h1>
+      <p class="role">Full Stack Developer</p>
+    </div>
+
+    <div class="sb-section">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="label">Email</span>
+          dijanahasani14@gmail.com
+        </li>
+        <li>
+          <span class="label">Phone</span>
+          +383 45 635 050
+        </li>
+        <li>
+          <span class="label">GitHub</span>
+          github.com/dijanahasanii
+        </li>
+        <li>
+          <span class="label">LinkedIn</span>
+          linkedin.com/in/dijana-hasani
+        </li>
+        <li>
+          <span class="label">Location</span>
+          Mitrovica, Kosovo
+        </li>
+      </ul>
+    </div>
+
+    <div class="sb-section">
+      <h2>Technical Skills</h2>
+      <div class="skill-tags">
+        <div class="tag-row">
+          <span class="tag-label">JavaScript</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:90%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">React</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:85%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Next.js</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:80%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">React Native</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:80%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Node.js</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:75%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Supabase</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:80%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">HTML / CSS</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:95%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">MongoDB</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:65%"></div></div>
+        </div>
+        <div class="tag-row">
+          <span class="tag-label">Python</span>
+          <div class="tag-bar"><div class="tag-fill" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <h2>Soft Skills</h2>
+      <ul class="plain-list">
+        <li>Adaptability</li>
+        <li>Teamwork</li>
+        <li>Responsibility</li>
+        <li>Planning &amp; Organization</li>
+      </ul>
+    </div>
+
+    <div class="sb-section">
+      <h2>Languages</h2>
+      <ul class="plain-list">
+        <li>Albanian — Native</li>
+        <li>English — Fluent</li>
+      </ul>
+    </div>
+
+    <div class="sb-section">
+      <h2>Interests</h2>
+      <ul class="plain-list">
+        <li>Programming</li>
+        <li>Web Design</li>
+        <li>Reading</li>
+        <li>Music</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <div class="summary cv-section">
+      <h2>Profile</h2>
+      <p>Full Stack Developer with a BSc in Computer Science &amp; Engineering from Isa Boletini University. Currently working at AlphAEcho (Prishtina) building full-stack web applications with React, Next.js, and Supabase. Certified in Web Application Development by ICT Kosova. Strong foundation in problem-solving, mathematical logic, and cross-platform development. Committed to continuous learning and delivering clean, maintainable code.</p>
+    </div>
+
+    <div class="cv-section">
+      <h2>Work Experience</h2>
+
+      <div class="entry">
+        <span class="entry-date">Sep 2025 –<br>Present</span>
+        <div class="entry-body">
+          <h3>Full Stack Developer</h3>
+          <p class="entry-place">AlphAEcho · Prishtina, Kosovo</p>
+          <ul>
+            <li>Developed and maintained full-stack web applications using React, Next.js, Tailwind CSS, and Supabase.</li>
+            <li>Collaborated with team members to design and implement UI/UX components.</li>
+            <li>Built responsive interfaces and optimized frontend performance.</li>
+            <li>Assisted with debugging, testing, and new feature development.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <span class="entry-date">2022 – 2025</span>
+        <div class="entry-body">
+          <h3>BSc Computer Science &amp; Engineering</h3>
+          <p class="entry-place">Isa Boletini University · Mitrovica, Kosovo</p>
+          <ul>
+            <li>Major coursework: algorithms, data structures, software engineering, databases, mobile development.</li>
+            <li>Key academic project published on LinkedIn; strong focus on practical, project-based learning.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Certifications</h2>
+      <div class="cert-item">
+        <div class="cert-text">
+          <h3>ICT &amp; Digital Skills Training — Web Application Development</h3>
+          <p>ICT Kosova · Professional Level · 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Selected Projects</h2>
+
+      <div class="entry">
+        <span class="entry-date">2025</span>
+        <div class="entry-body">
+          <h3>MedPal</h3>
+          <p class="entry-place">React · Node.js · Supabase · JavaScript</p>
+          <ul>
+            <li>Digital health management platform with role-based dashboards for clinics, doctors, and patients.</li>
+            <li>Features appointment booking, medical reports, schedule management, and document storage.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <span class="entry-date">2024</span>
+        <div class="entry-body">
+          <h3>Personal Safety App</h3>
+          <p class="entry-place">React Native · Expo · JavaScript</p>
+          <ul>
+            <li>Cross-platform mobile app with SOS alerts, real-time location sharing, and emergency contacts.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+</body>
+</html>
