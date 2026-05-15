@@ -147,6 +147,7 @@ const formStatus = document.getElementById('form-status');
 
 if (form) {
   form.addEventListener('submit', async (e) => {
+    try {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
@@ -173,5 +174,8 @@ if (form) {
       btn.disabled = false;
       btn.textContent = 'Send Message';
     }
-  });
+    } catch (error) {
+      console.error('[ai-fix] async error:', error);
+      throw error;
+    }
 }
