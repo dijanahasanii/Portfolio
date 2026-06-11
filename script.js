@@ -1,4 +1,6 @@
- /* ─── VIDEO MODAL (MedPal - YouTube) ─── */
+document.documentElement.classList.add('js');
+
+/* ─── VIDEO MODAL (MedPal - YouTube) ─── */
 function openDemo() {
   const modal = document.getElementById('demo-modal');
   document.getElementById('demo-iframe').src = 'https://www.youtube.com/embed/StJY3I9yxDE?autoplay=1';
@@ -49,9 +51,11 @@ window.addEventListener('scroll', () => {
 const navToggle = document.querySelector('.nav-toggle');
 const navList   = document.querySelector('nav ul');
 
-navToggle.addEventListener('click', () => {
-  navList.classList.toggle('open');
-});
+if (navToggle && navList) {
+  navToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+  });
+}
 
 document.querySelectorAll('nav ul li a').forEach(link => {
   link.addEventListener('click', () => navList.classList.remove('open'));
@@ -107,7 +111,7 @@ function type() {
   typingTimer = setTimeout(type, delay);
 }
 
-type();
+if (typedEl) type();
 
 /* ─── INTERSECTION OBSERVER: section fade-in ─── */
 const fadeEls = document.querySelectorAll('.section-fade');
@@ -147,7 +151,6 @@ const formStatus = document.getElementById('form-status');
 
 if (form) {
   form.addEventListener('submit', async (e) => {
-    try {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
@@ -174,8 +177,5 @@ if (form) {
       btn.disabled = false;
       btn.textContent = 'Send Message';
     }
-    } catch (error) {
-      console.error('[ai-fix] async error:', error);
-      throw error;
-    }
+  });
 }
