@@ -250,6 +250,10 @@ if (navToggle && navList) {
     if (!isMobileNav()) closeMenu();
   });
 
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) closeMenu();
+  });
+
   closeMenu();
 }
 

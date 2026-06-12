@@ -236,6 +236,32 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   body > #nav-links {
     display: none !important;
   }
+
+  .nav__links {
+    display: flex !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  .nav__links.open .nav__menu-close,
+  .nav__menu-close {
+    display: none !important;
+  }
+
+  .nav__toggle {
+    display: none !important;
+  }
 }
 
 .nav__links a {
