@@ -3,491 +3,394 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dijana Hasani — Frontend / Full Stack Developer</title>
-    <!-- SEO -->
-    <meta
-      name="description"
-      content="Dijana Hasani — Full Stack Developer specializing in React, Next.js, and mobile development. Based in Kosovo."
-    />
+    <title>Dijana Hasani — Full Stack Developer</title>
+    <meta name="description" content="Dijana Hasani — Full Stack Developer specializing in React, Next.js, and mobile development. Based in Kosovo." />
     <meta name="author" content="Dijana Hasani" />
-    <meta
-      name="keywords"
-      content="Dijana Hasani, Full Stack Developer, React, Next.js, React Native, Kosovo, Web Developer"
-    />
-
-    <!-- Open Graph (LinkedIn, WhatsApp, Facebook previews) -->
     <meta property="og:title" content="Dijana Hasani — Full Stack Developer" />
-    <meta
-      property="og:description"
-      content="Full Stack Developer building user-focused web and mobile applications with React, Next.js, Node.js and more."
-    />
+    <meta property="og:description" content="Premium portfolio of a modern Full Stack Developer building with React, Next.js, Node.js and more." />
     <meta property="og:image" content="profile.jpg" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Favicon (inline SVG → no file needed) -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%237c3aed'/><text x='50' y='68' font-family='Inter,Arial,sans-serif' font-size='44' font-weight='800' fill='white' text-anchor='middle'>DH</text></svg>"
-    />
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) { /* ignore */ }
+      })();
+    </script>
   </head>
 
   <body>
-    <!-- ─── NAV ─── -->
-    <header id="navbar">
-      <div class="container nav-inner">
-        <a href="#" class="logo">DH<span class="logo-dot">.</span></a>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#what-i-do">What I Do</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="nav-toggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <div class="aurora__layer aurora__layer--1"></div>
+      <div class="aurora__layer aurora__layer--2"></div>
+      <div class="aurora__layer aurora__layer--3"></div>
+    </div>
+    <div class="mesh" aria-hidden="true"></div>
+    <canvas id="particles" class="particles" aria-hidden="true"></canvas>
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav-wrap" id="nav-wrap">
+      <nav class="nav glass" id="navbar" aria-label="Main">
+        <a href="#top" class="nav__logo">DH<span>.</span></a>
+        <ul class="nav__links" id="nav-links">
+          <li class="nav__menu-close">
+            <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li><a href="#about" data-nav="about">About</a></li>
+          <li><a href="#skills" data-nav="skills">Skills</a></li>
+          <li><a href="#projects" data-nav="projects">Projects</a></li>
+          <li><a href="#journey" data-nav="journey">Journey</a></li>
+          <li><a href="#contact" data-nav="contact">Contact</a></li>
+          <li class="nav__mobile-cv"><a href="cv.html" target="_blank">CV ↗</a></li>
+        </ul>
+        <a href="cv.html" target="_blank" class="nav__cta magnetic">CV ↗</a>
+        <button type="button" class="theme-toggle magnetic" id="theme-toggle" aria-label="Switch to light mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
-      </div>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+      </nav>
     </header>
 
-    <!-- ─── HERO ─── -->
-    <section class="hero">
-      <div class="hero-bg-grid"></div>
-      <div class="container hero-inner">
-        <p class="hero-eyebrow">Hi, I'm Dijana</p>
-        <h1 class="hero-title">
-          <span class="typed-wrapper"
-            ><span id="typed"></span><span class="cursor-blink">|</span></span
-          >
-        </h1>
-        <p class="hero-sub">Frontend Developer · React · Next.js · Mobile</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="cv.html" target="_blank" class="btn btn-ghost">View CV</a>
-        </div>
-        <div class="hero-socials">
-          <a
-            href="https://github.com/dijanahasanii"
-            target="_blank"
-            aria-label="GitHub"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2"
-            target="_blank"
-            aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="mailto:dijanahasani14@gmail.com" aria-label="Email"
-            ><i class="fas fa-envelope"></i
-          ></a>
-        </div>
-      </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll</span>
-        <i class="fas fa-arrow-down"></i>
-      </div>
-    </section>
-
-    <!-- ─── ABOUT ─── -->
-    <section id="about" class="section-fade">
-      <div class="container about-grid">
-        <div class="about-img-wrap">
-          <img src="profile.jpg" alt="Dijana Hasani" class="profile-pic" />
-          <div class="about-img-deco"></div>
-        </div>
-        <div class="about-text">
-          <span class="section-label">About Me</span>
-          <h2>Turning ideas into<br />working software.</h2>
-          <p>
-            I’m a frontend-focused Full Stack Developer with strong experience
-            in React, Next.js, and Tailwind CSS, and hands-on backend work using
-            Node.js and Supabase.
-          </p>
-          <p>
-            I have experience creating responsive, interactive, and accessible
-            interfaces, and I love turning complex ideas into intuitive digital
-            experiences.
-          </p>
-          <a href="cv.html" target="_blank" class="btn btn-primary"
-            >View Resume</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── WHAT I DO ─── -->
-    <section id="what-i-do" class="section-fade">
-      <div class="container">
-        <span class="section-label centered">What I Do</span>
-        <h2 class="section-title">Areas of focus</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-code"></i></div>
-            <h3>Web Development</h3>
-            <p>
-              Crafting responsive, accessible web experiences with React,
-              Next.js, Tailwind CSS, and clean JavaScript.
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <div class="wrap hero__grid">
+          <div class="hero__copy reveal">
+            <p class="hero__kicker">Hi, I'm</p>
+            <h1 class="hero__name">Dijana<br />Hasani</h1>
+            <p class="hero__role">Full Stack Developer · Frontend Enthusiast</p>
+            <p class="hero__cycle">
+              <span id="typed"></span><span class="cursor">|</span>
             </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>Mobile Development</h3>
-            <p>
-              Building cross-platform mobile apps with React Native and Expo —
-              fast, native-feel, and production-ready.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-            <h3>UI / UX Thinking</h3>
-            <p>
-              Designing interfaces that feel intuitive — translating
-              requirements into smooth, user-centered flows.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-terminal"></i></div>
-            <h3>Problem Solving</h3>
-            <p>
-              Applying algorithmic thinking and data structures to tackle
-              complex engineering challenges.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── SKILLS ─── -->
-    <section id="skills" class="section-fade">
-      <div class="container">
-        <span class="section-label centered">Skills</span>
-        <h2 class="section-title">Tech stack</h2>
-
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Languages &amp; Core</h3>
-            <ul class="skill-list">
-              <li>JavaScript</li>
-              <li>HTML &amp; CSS</li>
-              <li>Python</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>Frontend &amp; Mobile</h3>
-            <ul class="skill-list">
-              <li>React</li>
-              <li>Next.js</li>
-              <li>React Native</li>
-              <li>Tailwind CSS</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3>Backend &amp; Tools</h3>
-            <ul class="skill-list">
-              <li>Node.js &amp; Express</li>
-              <li>Supabase</li>
-              <li>MongoDB</li>
-              <li>Git &amp; Docker</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─── EXPERIENCE ─── -->
-    <section id="experience" class="section-fade">
-      <div class="container">
-        <span class="section-label centered">Experience</span>
-        <h2 class="section-title">Education &amp; Background</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-date">Sep 2025 — Mar 2026</span>
-              <h3>Full Stack Developer</h3>
-              <p class="timeline-place">AlphAEcho · Prishtina, Kosovo</p>
-              <p>
-                Developing and maintaining full-stack web applications using
-                React, Next.js, Tailwind CSS, and Supabase. Collaborating on
-                UI/UX design, implementing responsive interfaces, and
-                contributing to debugging, testing, and feature development.
-              </p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary magnetic">View Projects</a>
+              <a href="cv.html" target="_blank" class="btn btn--ghost magnetic">Download CV</a>
+              <a href="#contact" class="btn btn--ghost magnetic">Contact Me</a>
+            </div>
+            <div class="hero__socials">
+              <a href="https://github.com/dijanahasanii" target="_blank" class="social magnetic" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="social magnetic" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="mailto:dijanahasani14@gmail.com" class="social magnetic" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-date">2025</span>
-              <h3>Certification — Web Application Development</h3>
-              <p class="timeline-place">ICT Kosova · Professional</p>
-              <p>
-                Completed professional certification in Web Application
-                Development, covering modern frontend frameworks, backend
-                integration, and production deployment practices.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <span class="timeline-date">2022 — 2026</span>
-              <h3>Graduated — Computer Science &amp; Engineering</h3>
-              <p class="timeline-place">
-                Isa Boletini University · Mitrovica, Kosovo
-              </p>
-              <p>
-                Studied algorithms, data structures, software engineering,
-                databases, and mobile development. Key academic project
-                published on LinkedIn; strong focus on practical, project-based
-                learning.
-              </p>
-            </div>
+          <div class="hero__visual reveal">
+            <div class="hero__glow"></div>
+            <div class="hero__ring"></div>
+            <img src="profile.jpg" alt="Dijana Hasani" class="hero__photo" width="400" height="480" loading="eager" />
           </div>
         </div>
-      </div>
-    </section>
+        <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i class="fas fa-arrow-down"></i></div>
+      </section>
 
-    <!-- ─── PROJECTS ─── -->
-    <section id="projects" class="section-fade">
-      <div class="container">
-        <span class="section-label centered">Projects</span>
-        <h2 class="section-title">Selected work</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="medpal.png" alt="MedPal" />
-              <div class="project-overlay">
-                <a
-                  href="https://github.com/dijanahasanii/MedPal"
-                  target="_blank"
-                  class="overlay-link"
-                >
-                  <i class="fab fa-github"></i> GitHub
-                </a>
-                <button class="overlay-link demo-btn" onclick="openDemo()">
-                  <i class="fas fa-play"></i> Watch Demo
-                </button>
+      <!-- ABOUT -->
+      <section id="about" class="section section-fade">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">About</span>
+            <h2 class="section-title">Crafting interfaces with<br /><span class="gradient-text">engineering precision.</span></h2>
+          </header>
+          <div class="about">
+            <div class="about__story reveal-stagger">
+              <p>I'm a frontend-focused Full Stack Developer with strong experience in React, Next.js, and Tailwind CSS, and hands-on backend work using Node.js and Supabase.</p>
+              <p>I create responsive, interactive, and accessible interfaces — turning complex ideas into intuitive digital experiences that feel premium and purposeful.</p>
+              <div class="about__stats">
+                <div class="mini-stat glass" data-tilt>
+                  <span class="mini-stat__num" data-count="4" data-suffix="+">0</span>
+                  <span class="mini-stat__label">Projects</span>
+                </div>
+                <div class="mini-stat glass" data-tilt>
+                  <span class="mini-stat__num" data-count="11" data-suffix="+">0</span>
+                  <span class="mini-stat__label">Technologies</span>
+                </div>
+                <div class="mini-stat glass" data-tilt>
+                  <span class="mini-stat__num" data-count="4" data-suffix="+">0</span>
+                  <span class="mini-stat__label">Years Learning</span>
+                </div>
+                <div class="mini-stat glass" data-tilt>
+                  <span class="mini-stat__num">BSc</span>
+                  <span class="mini-stat__label">University Degree</span>
+                </div>
               </div>
             </div>
-            <div class="project-details">
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section section-fade">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Skills</span>
+            <h2 class="section-title">Interactive <span class="gradient-text">tech stack</span></h2>
+            <p class="section-desc">Hover to explore proficiency — no boring bars, just clarity.</p>
+          </header>
+          <div class="skills-grid" id="skills-grid">
+            <!-- populated by JS for consistency, fallback in noscript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section section-fade section--projects">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Projects</span>
+            <h2 class="section-title">Selected <span class="gradient-text">work</span></h2>
+            <p class="section-desc">The centerpiece — real products, real architecture, real craft.</p>
+          </header>
+
+          <article class="project project--featured glass reveal-stagger" data-tilt>
+            <div class="project__visual">
+              <img src="medpal.png" alt="MedPal" loading="lazy" />
+              <div class="project__overlay">
+                <button class="project__btn" onclick="openDemo()"><i class="fas fa-play"></i> Live Demo</button>
+                <a href="https://github.com/dijanahasanii/MedPal" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                <button class="project__btn" onclick="openCaseStudy('medpal')"><i class="fas fa-book-open"></i> Case Study</button>
+              </div>
+            </div>
+            <div class="project__body">
+              <span class="project__badge">Web App · Featured</span>
               <h3>MedPal</h3>
-              <p>
-                A digital health management platform for clinics, doctors, and
-                patients. Designed scalable role-based dashboards and reusable
-                frontend components.
-              </p>
-              <div class="tech-used">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>MongoDB</span>
-              </div>
+              <p>Digital health platform with role-based dashboards for clinics, doctors, and patients.</p>
+              <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card">
-            <div class="project-image">
-              <img src="travelblog.png" alt="Wandr" />
-              <div class="project-overlay">
-                <a
-                  href="https://github.com/dijanahasanii/TravelBlog"
-                  target="_blank"
-                  class="overlay-link"
-                >
-                  <i class="fab fa-github"></i> GitHub
-                </a>
+          <div class="projects-row">
+            <article class="project glass reveal-stagger" data-tilt>
+              <div class="project__visual">
+                <img src="travelblog.png" alt="Wandr" loading="lazy" />
+                <div class="project__overlay">
+                  <a href="https://github.com/dijanahasanii/TravelBlog" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                  <button class="project__btn" onclick="openCaseStudy('wandr')"><i class="fas fa-book-open"></i> Case Study</button>
+                </div>
               </div>
-            </div>
-            <div class="project-details">
-              <h3>Wandr</h3>
-              <p>
-                A microservices-based platform where users create accounts, post
-                travel experiences with photos and captions, select locations,
-                and receive notifications — containerized with Docker Compose.
-              </p>
-              <div class="tech-used">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>MongoDB</span>
-                <span>Docker</span>
-                <span>Microservices</span>
+              <div class="project__body">
+                <span class="project__badge">Full Stack</span>
+                <h3>Wandr</h3>
+                <p>Microservices travel platform with Docker Compose and real-time notifications.</p>
+                <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span></div>
               </div>
-            </div>
-          </div>
+            </article>
 
-          <div class="project-card">
-            <div class="project-image">
-              <img src="project1.jpg" alt="Personal Safety App" />
-              <div class="project-overlay">
-                <a
-                  href="https://github.com/dijanahasanii/PersonalSafetyApp"
-                  target="_blank"
-                  class="overlay-link"
-                >
-                  <i class="fab fa-github"></i> GitHub
-                </a>
-                <button
-                  class="overlay-link demo-btn"
-                  onclick="openSafetyDemo()"
-                >
-                  <i class="fas fa-play"></i> Watch Demo
-                </button>
+            <article class="project glass reveal-stagger" data-tilt>
+              <div class="project__visual">
+                <img src="project1.jpg" alt="Personal Safety App" loading="lazy" />
+                <div class="project__overlay">
+                  <button class="project__btn" onclick="openSafetyDemo()"><i class="fas fa-play"></i> Demo</button>
+                  <a href="https://github.com/dijanahasanii/PersonalSafetyApp" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                  <button class="project__btn" onclick="openCaseStudy('safety')"><i class="fas fa-book-open"></i> Case Study</button>
+                </div>
               </div>
-            </div>
-            <div class="project-details">
-              <h3>Personal Safety App</h3>
-              <p>
-                A cross-platform mobile app with emergency features, real-time
-                location sharing, and SOS alerts — built to keep users safe when
-                it matters most.
-              </p>
-              <div class="tech-used">
-                <span>React Native</span>
-                <span>Expo</span>
-                <span>JavaScript</span>
+              <div class="project__body">
+                <span class="project__badge">Mobile App</span>
+                <h3>Personal Safety App</h3>
+                <p>Cross-platform SOS app with real-time location sharing and emergency alerts.</p>
+                <div class="tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
               </div>
-            </div>
-          </div>
+            </article>
 
-          <div class="project-card project-card--locked" aria-label="Upcoming project">
-            <div class="project-image project-image--locked">
-              <div class="project-locked-content">
-                <i class="fas fa-lock" aria-hidden="true"></i>
-                <span class="project-lock-badge">Coming Soon</span>
+            <article class="project project--soon glass reveal-stagger" data-tilt>
+              <div class="project__visual project__visual--locked">
+                <div class="project__locked"><i class="fas fa-lock"></i><span> Coming Soon</span></div>
               </div>
-            </div>
-            <div class="project-details">
-              <h3>
-                AI-Powered Code Review Assistant
-                <span class="locked-tag">In development</span>
-              </h3>
-              <p>
-                A GitHub-integrated platform that analyzes code changes, detects code quality issues, and provides automated review suggestions through static analysis and heuristic techniques.
-              </p>
-              <div class="tech-used">
-                <span>React</span>
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>Supabase</span>
-                <span>GitHub API</span>
-                <span>Socket.IO</span>
+              <div class="project__body">
+                <span class="project__badge project__badge--soon">In Development</span>
+                <h3>AI Code Review Assistant</h3>
+                <p>GitHub-integrated platform for automated code quality analysis and review suggestions.</p>
+                <div class="tags"><span>React</span><span>Supabase</span><span>Socket.IO</span><span>GitHub API</span></div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section id="contact" class="section-fade">
-      <div class="container">
-        <span class="section-label centered">Contact</span>
-        <h2 class="section-title">Let's work together</h2>
-        <p class="section-sub">
-          Have a project in mind or just want to say hi? My inbox is open. Open to internships, junior roles, and learning-focused opportunities.
-        </p>
+      <!-- JOURNEY / TIMELINE -->
+      <section id="journey" class="section section-fade">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Journey</span>
+            <h2 class="section-title">Career <span class="gradient-text">timeline</span></h2>
+          </header>
+          <div class="timeline">
+            <div class="timeline__line" aria-hidden="true"></div>
 
-        <div class="contact-container contact-centered">
-          <div class="contact-info">
-            <h3>Get in touch</h3>
-            <a href="mailto:dijanahasani14@gmail.com" class="contact-item">
-              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-              <span>dijanahasani14@gmail.com</span>
-            </a>
-            <a href="https://github.com/dijanahasanii" target="_blank" class="contact-item">
-              <span class="contact-icon"><i class="fab fa-github"></i></span>
-              <span>github.com/dijanahasanii</span>
-            </a>
-            <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="contact-item">
-              <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
-              <span>linkedin.com/in/dijana-hasani-19b8a92b2</span>
+            <article class="timeline__item reveal-stagger">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <time>Sep 2025 — Mar 2026</time>
+                <h3>Full Stack Developer · AlphAEcho</h3>
+                <p>Building production web apps with React, Next.js, Tailwind CSS, and Supabase in Prishtina, Kosovo.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <h3>Wandr · Travel Blog Platform</h3>
+                <p>Microservices architecture with Docker, MongoDB, and a React frontend for travel experiences.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <h3>Personal Safety App</h3>
+                <p>React Native mobile app with SOS alerts, location sharing, and emergency workflows.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <time>2022 — 2026</time>
+                <h3>Bachelor · Computer Science & Engineering</h3>
+                <p>Isa Boletini University — algorithms, software engineering, databases, and mobile development.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger timeline__item--future">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <time> Coming Soon</time>
+                <h3>AI-Powered Code Review Assistant</h3>
+                <p>GitHub-integrated static analysis and heuristic review engine — currently in development.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger timeline__item--future">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <time>Future</time>
+                <h3>Master's Degree</h3>
+                <p>Continuing academic growth in advanced software engineering and systems design.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE AREAS -->
+      <section id="experience" class="section section-fade">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Experience</span>
+            <h2 class="section-title">What I <span class="gradient-text">bring</span></h2>
+          </header>
+          <div class="exp-grid">
+            <article class="exp-card glass reveal-stagger" data-tilt>
+              <i class="fas fa-layer-group"></i>
+              <h3>Full Stack Development</h3>
+              <p>End-to-end product delivery — React frontends, Node.js APIs, database design, and deployment.</p>
+            </article>
+            <article class="exp-card glass reveal-stagger" data-tilt>
+              <i class="fas fa-paint-brush"></i>
+              <h3>Frontend Development</h3>
+              <p>Pixel-perfect, accessible interfaces with modern CSS, component architecture, and motion design.</p>
+            </article>
+            <article class="exp-card glass reveal-stagger" data-tilt>
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Academic Projects</h3>
+              <p>CS fundamentals applied to real software — algorithms, databases, and engineering principles.</p>
+            </article>
+            <article class="exp-card glass reveal-stagger" data-tilt>
+              <i class="fas fa-rocket"></i>
+              <h3>Personal Projects</h3>
+              <p>Self-driven builds from concept to production — health, travel, safety, and developer tools.</p>
+            </article>
+            <article class="exp-card glass reveal-stagger" data-tilt>
+              <i class="fab fa-github"></i>
+              <h3>Open Source Learning</h3>
+              <p>Continuous growth through Git workflows, code reviews, and community-driven best practices.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section-fade">
+        <div class="wrap">
+          <div class="contact glass reveal-stagger">
+            <header class="section-head">
+              <span class="section-tag">Contact</span>
+              <h2 class="section-title">Let's build something<br /><span class="gradient-text">exceptional.</span></h2>
+              <p class="section-desc">Open to internships, junior roles, and learning-focused opportunities.</p>
+            </header>
+            <div class="contact__grid">
+              <a href="mailto:dijanahasani14@gmail.com" class="contact__item magnetic">
+                <i class="fas fa-envelope"></i>
+                <div><strong>Email</strong><span>dijanahasani14@gmail.com</span></div>
+              </a>
+              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="contact__item magnetic">
+                <i class="fab fa-linkedin-in"></i>
+                <div><strong>LinkedIn</strong><span>linkedin.com/in/dijana-hasani-19b8a92b2</span></div>
+              </a>
+              <a href="https://github.com/dijanahasanii" target="_blank" class="contact__item magnetic">
+                <i class="fab fa-github"></i>
+                <div><strong>GitHub</strong><span>github.com/dijanahasanii</span></div>
+              </a>
+              <div class="contact__item contact__item--static">
+                <i class="fas fa-map-marker-alt"></i>
+                <div><strong>Location</strong><span>Prishtina, Kosovo</span></div>
+              </div>
+            </div>
+            <a href="mailto:dijanahasani14@gmail.com" class="btn btn--primary btn--send magnetic">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- ─── FOOTER ─── -->
-    <footer>
-      <div class="container footer-inner">
-        <span class="logo">DH<span class="logo-dot">.</span></span>
-        <p>&copy; 2026 Dijana Hasani · Built with care</p>
-        <a href="#" class="back-to-top" aria-label="Back to top"
-          ><i class="fas fa-arrow-up"></i
-        ></a>
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">Designed &amp; Developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__tech">Built with React · Node.js · Modern CSS</p>
+        <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
       </div>
     </footer>
 
-    <!-- ─── SAFETY APP VIDEO MODAL ─── -->
-    <div
-      id="safety-modal"
-      class="modal-backdrop"
-      onclick="closeSafetyDemo(event)"
-    >
-      <div class="modal-box">
-        <button class="modal-close" onclick="closeSafetyDemo()">&times;</button>
-        <div class="modal-video">
-          <video
-            id="safety-video"
-            controls
-            playsinline
-            style="
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              inset: 0;
-              object-fit: contain;
-              background: #000;
-            "
-          >
-            <source src="safety-demo.mov" type="video/mp4" />
-          </video>
+    <button class="fab-top magnetic" id="fab-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- VIDEO MODALS -->
+    <div id="demo-modal" class="modal" onclick="closeDemo(event)">
+      <div class="modal__box glass">
+        <button class="modal__close" onclick="closeDemo()">&times;</button>
+        <div class="modal__video"><iframe id="demo-iframe" src="" title="MedPal Demo" allowfullscreen></iframe></div>
+      </div>
+    </div>
+    <div id="safety-modal" class="modal" onclick="closeSafetyDemo(event)">
+      <div class="modal__box glass">
+        <button class="modal__close" onclick="closeSafetyDemo()">&times;</button>
+        <div class="modal__video">
+          <video id="safety-video" controls playsinline><source src="safety-demo.mov" type="video/mp4" /></video>
         </div>
       </div>
     </div>
 
-    <!-- ─── VIDEO MODAL ─── -->
-    <div id="demo-modal" class="modal-backdrop" onclick="closeDemo(event)">
-      <div class="modal-box">
-        <button class="modal-close" onclick="closeDemo()">&times;</button>
-        <div class="modal-video">
-          <iframe
-            id="demo-iframe"
-            src=""
-            title="MedPal Demo"
-            frameborder="0"
-            allow="
-              accelerometer;
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              gyroscope;
-              picture-in-picture;
-            "
-            allowfullscreen
-          >
-          </iframe>
-        </div>
+    <!-- CASE STUDY MODAL -->
+    <div id="case-modal" class="modal" onclick="closeCaseStudy(event)">
+      <div class="modal__box modal__box--wide glass">
+        <button class="modal__close" onclick="closeCaseStudy()">&times;</button>
+        <div class="case" id="case-content"></div>
       </div>
     </div>
 
