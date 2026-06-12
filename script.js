@@ -180,10 +180,16 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 if (navToggle && navList) {
-  const navListParent = navList.parentElement;
+  const navBar = document.getElementById('navbar');
+  const navCta = navBar?.querySelector('.nav__cta');
   let menuScrollY = 0;
 
   const isMobileNav = () => window.matchMedia('(max-width: 768px)').matches;
+
+  const restoreNavList = () => {
+    if (!navBar || !navCta || navList.parentElement === navBar) return;
+    navBar.insertBefore(navList, navCta);
+  };
 
   const lockBodyScroll = () => {
     menuScrollY = window.scrollY;
@@ -209,20 +215,13 @@ if (navToggle && navList) {
     document.documentElement.classList.remove('menu-open');
     document.body.classList.remove('menu-open');
     navToggle.setAttribute('aria-expanded', 'false');
-
-    if (navListParent && navList.parentElement === document.body) {
-      navListParent.appendChild(navList);
-    }
-
+    restoreNavList();
     unlockBodyScroll();
   };
 
   const openMenu = () => {
-    if (isMobileNav()) {
-      document.body.appendChild(navList);
-      lockBodyScroll();
-    }
-
+    if (!isMobileNav()) return;
+    lockBodyScroll();
     navList.classList.add('open');
     navToggle.classList.add('open');
     document.documentElement.classList.add('menu-open');
@@ -248,8 +247,10 @@ if (navToggle && navList) {
   });
 
   window.addEventListener('resize', () => {
-    if (!isMobileNav() && navList.classList.contains('open')) closeMenu();
+    if (!isMobileNav()) closeMenu();
   });
+
+  closeMenu();
 }
 
 document.getElementById('fab-top')?.addEventListener('click', () => {

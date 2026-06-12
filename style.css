@@ -230,6 +230,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 .nav__menu-close { display: none; }
 
+/* Safety: hide menu if it ever lands outside the nav bar on desktop */
+@media (min-width: 769px) {
+  body > .nav__links,
+  body > #nav-links {
+    display: none !important;
+  }
+}
+
 .nav__links a {
   font-size: 0.82rem;
   font-weight: 500;
