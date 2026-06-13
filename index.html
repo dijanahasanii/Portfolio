@@ -170,22 +170,39 @@
 
           <article class="project project--featured glass reveal-stagger" data-tilt>
             <div class="project__visual">
-              <img src="medpal.png" alt="MedPal" loading="lazy" />
+              <img src="code-review.png" alt="AI Code Review Assistant" loading="lazy" />
               <div class="project__overlay">
-                <button class="project__btn" onclick="openDemo()"><i class="fas fa-play"></i> Live Demo</button>
-                <a href="https://github.com/dijanahasanii/MedPal" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                <button class="project__btn" onclick="openCaseStudy('medpal')"><i class="fas fa-book-open"></i> Case Study</button>
+                <a href="https://ai-powered-code-review-assistant-production.up.railway.app/" id="ai-review-demo" target="_blank" rel="noopener" class="project__btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant" target="_blank" rel="noopener" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                <button class="project__btn" onclick="openCaseStudy('aireview')"><i class="fas fa-book-open"></i> Case Study</button>
               </div>
             </div>
             <div class="project__body">
-              <span class="project__badge">Web App · Featured</span>
-              <h3>MedPal</h3>
-              <p>Digital health platform with role-based dashboards for clinics, doctors, and patients.</p>
-              <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+              <span class="project__badge">Web App</span>
+              <h3>AI Code Review Assistant</h3>
+              <p>GitHub-integrated platform for automated code analysis, AI-generated reports, and real-time review dashboards.</p>
+              <div class="tags"><span>React</span><span>Node.js</span><span>Supabase</span><span>Socket.IO</span><span>GitHub API</span></div>
             </div>
           </article>
 
           <div class="projects-row">
+            <article class="project glass reveal-stagger" data-tilt>
+              <div class="project__visual">
+                <img src="medpal.png" alt="MedPal" loading="lazy" />
+                <div class="project__overlay">
+                  <button class="project__btn" onclick="openDemo()"><i class="fas fa-play"></i> Live Demo</button>
+                  <a href="https://github.com/dijanahasanii/MedPal" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                  <button class="project__btn" onclick="openCaseStudy('medpal')"><i class="fas fa-book-open"></i> Case Study</button>
+                </div>
+              </div>
+              <div class="project__body">
+                <span class="project__badge">Web App</span>
+                <h3>MedPal</h3>
+                <p>Digital health platform with role-based dashboards for clinics, doctors, and patients.</p>
+                <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+              </div>
+            </article>
+
             <article class="project glass reveal-stagger" data-tilt>
               <div class="project__visual">
                 <img src="travelblog.png" alt="Wandr" loading="lazy" />
@@ -195,7 +212,7 @@
                 </div>
               </div>
               <div class="project__body">
-                <span class="project__badge">Full Stack</span>
+                <span class="project__badge">Web App</span>
                 <h3>Wandr</h3>
                 <p>Microservices travel platform with Docker Compose and real-time notifications.</p>
                 <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span></div>
@@ -218,23 +235,6 @@
                 <div class="tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
               </div>
             </article>
-
-            <article class="project glass reveal-stagger" data-tilt>
-              <div class="project__visual">
-                <img src="code-review.png" alt="AI Code Review Assistant" loading="lazy" />
-                <div class="project__overlay">
-                  <a href="https://ai-powered-code-review-assistant-production.up.railway.app/" id="ai-review-demo" target="_blank" rel="noopener" class="project__btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                  <a href="https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant" target="_blank" rel="noopener" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                  <button class="project__btn" onclick="openCaseStudy('aireview')"><i class="fas fa-book-open"></i> Case Study</button>
-                </div>
-              </div>
-              <div class="project__body">
-                <span class="project__badge">Web App · Thesis</span>
-                <h3>AI Code Review Assistant</h3>
-                <p>GitHub-integrated platform for automated code analysis, AI-generated reports, and real-time review dashboards.</p>
-                <div class="tags"><span>React</span><span>Node.js</span><span>Supabase</span><span>Socket.IO</span></div>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -252,17 +252,18 @@
             <article class="timeline__item reveal-stagger">
               <div class="timeline__dot"></div>
               <div class="timeline__card glass">
-                <time>Sep 2025 — Mar 2026</time>
-                <h3>Full Stack Developer · AlphAEcho</h3>
-                <p>Building production web apps with React, Next.js, Tailwind CSS, and Supabase in Prishtina, Kosovo.</p>
+                <time>2022 — 2026</time>
+                <h3>Bachelor · Computer Science & Engineering</h3>
+                <p>Isa Boletini University — algorithms, software engineering, databases, and mobile development.</p>
               </div>
             </article>
 
             <article class="timeline__item reveal-stagger">
               <div class="timeline__dot"></div>
               <div class="timeline__card glass">
-                <h3>Wandr · Travel Blog Platform</h3>
-                <p>Microservices architecture with Docker, MongoDB, and a React frontend for travel experiences.</p>
+                <time>Sep 2025 — Mar 2026</time>
+                <h3>Full Stack Developer · AlphAEcho</h3>
+                <p>Building production web apps with React, Next.js, Tailwind CSS, and Supabase in Prishtina, Kosovo.</p>
               </div>
             </article>
 
@@ -277,9 +278,16 @@
             <article class="timeline__item reveal-stagger">
               <div class="timeline__dot"></div>
               <div class="timeline__card glass">
-                <time>2022 — 2026</time>
-                <h3>Bachelor · Computer Science & Engineering</h3>
-                <p>Isa Boletini University — algorithms, software engineering, databases, and mobile development.</p>
+                <h3>MedPal · Digital Health Platform</h3>
+                <p>Full-stack health management platform with role-based dashboards for clinics, doctors, and patients.</p>
+              </div>
+            </article>
+
+            <article class="timeline__item reveal-stagger">
+              <div class="timeline__dot"></div>
+              <div class="timeline__card glass">
+                <h3>Wandr · Travel Blog Platform</h3>
+                <p>Microservices architecture with Docker, MongoDB, and a React frontend for travel experiences.</p>
               </div>
             </article>
 
