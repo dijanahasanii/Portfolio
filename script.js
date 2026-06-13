@@ -38,6 +38,19 @@ const SKILLS = [
   { name: 'Docker', icon: 'fab fa-docker', level: 'Proficient', levelClass: 'level--proficient' },
 ];
 
+/* ─── PROJECT LINKS (update demo URL when deployed) ─── */
+const PROJECT_LINKS = {
+  aiReview: {
+    github: 'https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant',
+    demo: 'https://ai-powered-code-review-assistant-production.up.railway.app/',
+    cover: 'code-review.png',
+    gallery: [
+      { src: 'code-review-repos.png', alt: 'Connected repositories dashboard' },
+      { src: 'code-review-run-detail.png', alt: 'Automated review run with findings and quality score' },
+    ],
+  },
+};
+
 const CASE_STUDIES = {
   medpal: {
     title: 'MedPal — Digital Health Platform',
@@ -72,6 +85,26 @@ const CASE_STUDIES = {
     github: 'https://github.com/dijanahasanii/PersonalSafetyApp',
     demo: true,
     safety: true,
+  },
+  aireview: {
+    title: 'AI-Powered Code Review Assistant',
+    problem: 'Teams need consistent, automated code quality feedback integrated directly into their GitHub workflow — not scattered manual reviews after every push.',
+    solution: 'Built a full-stack platform that connects GitHub repositories, analyzes code on push events, generates structured review reports, and streams results to a real-time dashboard.',
+    features: [
+      'GitHub OAuth authentication',
+      'Repository connection & webhooks',
+      'Automated code analysis engine',
+      'AI-generated review reports',
+      'Real-time dashboard (Socket.IO)',
+      'Review history & statistics',
+    ],
+    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Supabase', 'Socket.IO', 'GitHub API', 'Redis'],
+    architecture: 'GitHub webhooks trigger analysis on push; the Node.js backend queues jobs in Redis, persists results to Supabase, and broadcasts live updates to the React dashboard via Socket.IO.',
+    role: 'Full Stack Developer — Bachelor thesis project covering frontend, backend, OAuth, webhooks, and production deployment.',
+    github: PROJECT_LINKS.aiReview.github,
+    demo: true,
+    demoUrl: PROJECT_LINKS.aiReview.demo,
+    images: PROJECT_LINKS.aiReview.gallery,
   },
 };
 
@@ -121,17 +154,24 @@ function openCaseStudy(id) {
   const data = CASE_STUDIES[id];
   if (!data) return;
 
-  let actions = `<a href="${data.github}" target="_blank" class="btn btn--ghost"><i class="fab fa-github"></i> GitHub</a>`;
+  let actions = `<a href="${data.github}" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fab fa-github"></i> GitHub</a>`;
   if (data.demo && data.safety) {
     actions += `<button class="btn btn--primary" onclick="closeCaseStudy();openSafetyDemo()"><i class="fas fa-play"></i> Watch Demo</button>`;
+  } else if (data.demo && data.demoUrl) {
+    actions += `<a href="${data.demoUrl}" target="_blank" rel="noopener" class="btn btn--primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>`;
   } else if (data.demo) {
     actions += `<button class="btn btn--primary" onclick="closeCaseStudy();openDemo()"><i class="fas fa-play"></i> Live Demo</button>`;
   }
+
+  const gallery = data.images?.length
+    ? `<h4>Screenshots</h4><div class="case__gallery">${data.images.map((img) => `<figure class="case__shot"><img src="${img.src}" alt="${img.alt}" loading="lazy" /></figure>`).join('')}</div>`
+    : '';
 
   document.getElementById('case-content').innerHTML = `
     <h2>${data.title}</h2>
     <h4>Problem</h4><p>${data.problem}</p>
     <h4>Solution</h4><p>${data.solution}</p>
+    ${gallery}
     <h4>Features</h4><ul>${data.features.map((f) => `<li>${f}</li>`).join('')}</ul>
     <h4>Technologies</h4><div class="tags">${data.tech.map((t) => `<span>${t}</span>`).join('')}</div>
     <h4>Architecture</h4><p>${data.architecture}</p>
@@ -441,3 +481,9 @@ if (canHover && !prefersReducedMotion) {
 }
 
 updateNav();
+
+const aiReviewDemo = document.getElementById('ai-review-demo');
+if (aiReviewDemo) {
+  if (PROJECT_LINKS.aiReview.demo) aiReviewDemo.href = PROJECT_LINKS.aiReview.demo;
+  else aiReviewDemo.remove();
+}
