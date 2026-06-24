@@ -76,15 +76,14 @@ const CASE_STUDIES = {
   },
   safety: {
     title: 'Personal Safety App',
-    problem: 'People need immediate access to emergency tools and location sharing when personal safety is at risk.',
-    solution: 'Cross-platform mobile app with SOS alerts, real-time location sharing, and emergency contact workflows.',
-    features: ['SOS one-tap alert', 'Real-time GPS sharing', 'Emergency contacts', 'Cross-platform (iOS/Android)', 'Offline-capable core features'],
-    tech: ['React Native', 'Expo', 'JavaScript'],
-    architecture: 'React Native with Expo for rapid deployment, native device APIs for location and notifications.',
+    problem: 'People need quick, reliable safety tools on their phone — without sending sensitive data to the cloud.',
+    solution: 'A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing, safety check-ins, fake calls, and activity history — with data stored on your device.',
+    features: ['SOS alerts', 'Emergency contacts', 'Location sharing', 'Safety check-ins', 'Fake calls', 'Activity history', 'On-device data storage'],
+    tech: ['React Native', 'Expo', 'TypeScript', 'JavaScript'],
+    architecture: 'Expo app with file-based routing, native device APIs for location and notifications.',
     role: 'Mobile Developer — UI/UX, feature implementation, and device integration.',
-    github: 'https://github.com/dijanahasanii/PersonalSafetyApp',
-    demo: true,
-    safety: true,
+    github: 'https://github.com/dijanahasanii/Personal-Safety-App',
+    demo: false,
   },
   aireview: {
     title: 'AI-Powered Code Review Assistant',
@@ -135,29 +134,12 @@ function closeDemo(e) {
   document.body.style.overflow = '';
 }
 
-function openSafetyDemo() {
-  document.getElementById('safety-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  document.getElementById('safety-video').play();
-}
-
-function closeSafetyDemo(e) {
-  if (e && e.target !== document.getElementById('safety-modal')) return;
-  const video = document.getElementById('safety-video');
-  video.pause();
-  video.currentTime = 0;
-  document.getElementById('safety-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
 function openCaseStudy(id) {
   const data = CASE_STUDIES[id];
   if (!data) return;
 
   let actions = `<a href="${data.github}" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fab fa-github"></i> GitHub</a>`;
-  if (data.demo && data.safety) {
-    actions += `<button class="btn btn--primary" onclick="closeCaseStudy();openSafetyDemo()"><i class="fas fa-play"></i> Watch Demo</button>`;
-  } else if (data.demo && data.demoUrl) {
+  if (data.demo && data.demoUrl) {
     actions += `<a href="${data.demoUrl}" target="_blank" rel="noopener" class="btn btn--primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>`;
   } else if (data.demo) {
     actions += `<button class="btn btn--primary" onclick="closeCaseStudy();openDemo()"><i class="fas fa-play"></i> Live Demo</button>`;
@@ -191,7 +173,6 @@ function closeCaseStudy(e) {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeDemo();
-    closeSafetyDemo();
     closeCaseStudy();
   }
 });

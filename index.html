@@ -221,18 +221,17 @@
 
             <article class="project glass reveal-stagger" data-tilt>
               <div class="project__visual">
-                <img src="project1.jpg" alt="Personal Safety App" loading="lazy" />
+                <img src="personal-safety.png" alt="Personal Safety App" loading="lazy" />
                 <div class="project__overlay">
-                  <button class="project__btn" onclick="openSafetyDemo()"><i class="fas fa-play"></i> Demo</button>
-                  <a href="https://github.com/dijanahasanii/PersonalSafetyApp" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
+                  <a href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
                   <button class="project__btn" onclick="openCaseStudy('safety')"><i class="fas fa-book-open"></i> Case Study</button>
                 </div>
               </div>
               <div class="project__body">
                 <span class="project__badge">Mobile App</span>
                 <h3>Personal Safety App</h3>
-                <p>Cross-platform SOS app with real-time location sharing and emergency alerts.</p>
-                <div class="tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
+                <p>A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing, safety check-ins, fake calls, and activity history — with data stored on your device.</p>
+                <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span></div>
               </div>
             </article>
           </div>
@@ -271,7 +270,7 @@
               <div class="timeline__dot"></div>
               <div class="timeline__card glass">
                 <h3>Personal Safety App</h3>
-                <p>React Native mobile app with SOS alerts, location sharing, and emergency workflows.</p>
+                <p>A personal safety app built with Expo and React Native — SOS alerts, emergency contacts, location sharing, check-ins, fake calls, and on-device data storage.</p>
               </div>
             </article>
 
@@ -399,14 +398,6 @@
       <div class="modal__box glass">
         <button class="modal__close" onclick="closeDemo()">&times;</button>
         <div class="modal__video"><iframe id="demo-iframe" src="" title="MedPal Demo" allowfullscreen></iframe></div>
-      </div>
-    </div>
-    <div id="safety-modal" class="modal" onclick="closeSafetyDemo(event)">
-      <div class="modal__box glass">
-        <button class="modal__close" onclick="closeSafetyDemo()">&times;</button>
-        <div class="modal__video">
-          <video id="safety-video" controls playsinline><source src="safety-demo.mov" type="video/mp4" /></video>
-        </div>
       </div>
     </div>
 
