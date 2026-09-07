@@ -15,19 +15,41 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dijana Hasani — Full Stack Developer</title>
-    <meta name="description" content="Dijana Hasani — Full Stack Developer specializing in React, Next.js, and mobile development. Based in Kosovo." />
+    <title>Dijana Hasani — Frontend-Focused Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Dijana Hasani, a Computer Science &amp; Engineering graduate and frontend-focused full-stack developer specializing in React, Next.js, modern web applications, and AI-powered products."
+    />
     <meta name="author" content="Dijana Hasani" />
-    <meta property="og:title" content="Dijana Hasani — Full Stack Developer" />
-    <meta property="og:description" content="Premium portfolio of a modern Full Stack Developer building with React, Next.js, Node.js and more." />
-    <meta property="og:image" content="https://dijanahasanii.github.io/Portfolio/profile.jpg" />
+    <meta name="keywords" content="Dijana Hasani, Frontend Developer, Full Stack Developer, React, Next.js, AI, Kosovo" />
+    <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/" />
+    <meta property="og:title" content="Dijana Hasani — Frontend-Focused Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Computer Science &amp; Engineering graduate building modern web experiences and AI-powered products with React, Next.js, and full-stack systems."
+    />
+    <meta property="og:image" content="https://dijanahasanii.github.io/Portfolio/profile.jpeg" />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
+    <meta property="og:url" content="https://dijanahasanii.github.io/Portfolio/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dijana Hasani — Frontend-Focused Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Computer Science &amp; Engineering graduate specializing in React, Next.js, and AI-powered applications."
+    />
+    <meta name="twitter:image" content="https://dijanahasanii.github.io/Portfolio/profile.jpeg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="stylesheet" href="style.css?v=6" />
     <script>
       (function () {
         try {
@@ -45,15 +67,8 @@
     <div class="aurora" aria-hidden="true">
       <div class="aurora__layer aurora__layer--1"></div>
       <div class="aurora__layer aurora__layer--2"></div>
-      <div class="aurora__layer aurora__layer--3"></div>
     </div>
-    <div class="mesh" aria-hidden="true"></div>
-    <canvas id="particles" class="particles" aria-hidden="true"></canvas>
-    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
-    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-    <!-- NAV -->
     <header class="nav-wrap" id="nav-wrap">
       <nav class="nav glass" id="navbar" aria-label="Main">
         <a href="#top" class="nav__logo">DH<span>.</span></a>
@@ -63,19 +78,21 @@
               <i class="fas fa-times" aria-hidden="true"></i>
             </button>
           </li>
-          <li><a href="#about" data-nav="about">About</a></li>
+          <li><a href="#work" data-nav="work">Work</a></li>
+          <li><a href="#experience" data-nav="experience">Experience</a></li>
           <li><a href="#skills" data-nav="skills">Skills</a></li>
-          <li><a href="#projects" data-nav="projects">Projects</a></li>
-          <li><a href="#journey" data-nav="journey">Journey</a></li>
+          <li><a href="#about" data-nav="about">About</a></li>
           <li><a href="#contact" data-nav="contact">Contact</a></li>
-          <li class="nav__mobile-cv"><a href="cv.html" target="_blank">CV ↗</a></li>
+          <li class="nav__mobile-cv"><a href="cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
         </ul>
-        <a href="cv.html" target="_blank" class="nav__cta magnetic">CV ↗</a>
-        <button type="button" class="theme-toggle magnetic" id="theme-toggle" aria-label="Switch to light mode">
+        <a href="cv.html" target="_blank" rel="noopener" class="nav__cta">Download CV</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
           <i class="fas fa-sun" aria-hidden="true"></i>
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
-        <button class="nav__toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </nav>
     </header>
 
@@ -84,264 +101,346 @@
       <section class="hero" id="top">
         <div class="grid-bg" aria-hidden="true"></div>
         <div class="wrap hero__grid">
-          <div class="hero__copy reveal">
-            <p class="hero__kicker">Hi, I'm</p>
-            <h1 class="hero__name">Dijana<br />Hasani</h1>
-            <p class="hero__role">Full Stack Developer · Frontend Enthusiast</p>
-            <p class="hero__cycle">
-              <span id="typed"></span><span class="cursor">|</span>
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Dijana Hasani · CS &amp; Engineering Graduate</p>
+            <h1 class="hero__headline">
+              I build modern web experiences<br />
+              and <span class="gradient-text">AI-powered products.</span>
+            </h1>
+            <p class="hero__lead">
+              Frontend-focused Full Stack Developer specializing in React, Next.js, modern UI development,
+              and AI-assisted applications. Currently open to frontend, full-stack, and AI-focused roles.
             </p>
+            <div class="hero__stack" aria-label="Core technologies">
+              <span>React</span><span>Next.js</span><span>Tailwind</span><span>Node.js</span><span>Supabase</span><span>AI Tools</span>
+            </div>
             <div class="hero__actions">
-              <a href="#projects" class="btn btn--primary magnetic">View Projects</a>
-              <a href="cv.html" target="_blank" class="btn btn--ghost magnetic">Download CV</a>
-              <a href="#contact" class="btn btn--ghost magnetic">Contact Me</a>
+              <a href="#work" class="btn btn--primary">View My Work</a>
+              <a href="cv.html" target="_blank" rel="noopener" class="btn btn--ghost">Download CV</a>
             </div>
             <div class="hero__socials">
-              <a href="https://github.com/dijanahasanii" target="_blank" class="social magnetic" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="social magnetic" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="mailto:dijanahasani14@gmail.com" class="social magnetic" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://github.com/dijanahasanii" target="_blank" rel="noopener" class="social" aria-label="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" rel="noopener" class="social" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="mailto:dijanahasani14@gmail.com" class="social" aria-label="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
             </div>
           </div>
-          <div class="hero__visual reveal">
-            <div class="hero__glow"></div>
-            <div class="hero__ring"></div>
-            <img src="profile.jpeg" alt="Dijana Hasani" class="hero__photo" width="400" height="480" loading="eager" />
+          <div class="hero__visual">
+            <div class="hero__glow" aria-hidden="true"></div>
+            <img src="profile.jpeg" alt="Portrait of Dijana Hasani" class="hero__photo" width="400" height="480" loading="eager" />
           </div>
         </div>
-        <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i class="fas fa-arrow-down"></i></div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="section section-fade">
+      <!-- FEATURED PROJECT -->
+      <section id="work" class="section section-fade">
         <div class="wrap">
-          <header class="section-head section-head--center">
-            <span class="section-tag">About</span>
-            <h2 class="section-title">Crafting interfaces with<br /><span class="gradient-text">engineering precision.</span></h2>
+          <header class="section-head">
+            <span class="section-tag">Featured Project</span>
+            <h2 class="section-title">AI-Powered Code Review Assistant</h2>
+            <p class="section-desc section-desc--left">
+              Bachelor Thesis · AI · Developer Tools · Code Analysis
+            </p>
           </header>
-          <div class="about">
-            <div class="about__story reveal-stagger">
-              <p>I'm a frontend-focused Full Stack Developer with strong experience in React, Next.js, and Tailwind CSS, and hands-on backend work using Node.js and Supabase.</p>
-              <p>I create responsive, interactive, and accessible interfaces — turning complex ideas into intuitive digital experiences that feel premium and purposeful.</p>
-              <div class="about__stats">
-                <div class="mini-stat glass" data-tilt>
-                  <span class="mini-stat__num" data-count="5" data-suffix="+">0</span>
-                  <span class="mini-stat__label">Projects</span>
-                </div>
-                <div class="mini-stat glass" data-tilt>
-                  <span class="mini-stat__num" data-count="11" data-suffix="+">0</span>
-                  <span class="mini-stat__label">Technologies</span>
-                </div>
-                <div class="mini-stat glass" data-tilt>
-                  <span class="mini-stat__num" data-count="4" data-suffix="+">0</span>
-                  <span class="mini-stat__label">Years Learning</span>
-                </div>
-                <div class="mini-stat glass" data-tilt>
-                  <span class="mini-stat__num">BSc</span>
-                  <span class="mini-stat__label">University Degree</span>
-                </div>
+
+          <article class="featured glass">
+            <div class="featured__media">
+              <img
+                src="code-review.png"
+                alt="AI Code Review Assistant login screen with GitHub sign-in"
+                class="featured__cover"
+                loading="lazy"
+              />
+              <div class="featured__shots">
+                <img src="code-review-repos.png" alt="Repositories dashboard with connected GitHub repos" loading="lazy" />
+                <img src="code-review-run-detail.png" alt="Review run detail with findings and quality score" loading="lazy" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="section section-fade">
-        <div class="wrap">
-          <header class="section-head section-head--center">
-            <span class="section-tag">Skills</span>
-            <h2 class="section-title">Interactive <span class="gradient-text">tech stack</span></h2>
-            <p class="section-desc">Hover to explore proficiency — no boring bars, just clarity.</p>
-          </header>
-          <div class="skills-grid" id="skills-grid">
-            <!-- populated by JS for consistency, fallback in noscript -->
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="section section-fade section--projects">
-        <div class="wrap">
-          <header class="section-head section-head--center">
-            <span class="section-tag">Projects</span>
-            <h2 class="section-title">Selected <span class="gradient-text">work</span></h2>
-            <p class="section-desc">The centerpiece — real products, real architecture, real craft.</p>
-          </header>
-
-          <article class="project project--featured glass reveal-stagger" data-tilt>
-            <div class="project__visual">
-              <img src="code-review.png" alt="AI Code Review Assistant" loading="lazy" />
-              <div class="project__overlay">
-                <a href="https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant" target="_blank" rel="noopener" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                <button class="project__btn" onclick="openCaseStudy('aireview')"><i class="fas fa-book-open"></i> Case Study</button>
+            <div class="featured__body">
+              <p class="featured__intro">
+                My Bachelor thesis: a GitHub-integrated platform that analyzes repositories, surfaces structured
+                code quality findings, and presents them in a real-time developer dashboard.
+              </p>
+              <div class="featured__grid">
+                <div>
+                  <h3>Problem</h3>
+                  <p>
+                    Manual reviews are inconsistent and slow. Teams need automated feedback in their GitHub
+                    workflow — without relying on expensive continuous AI API calls.
+                  </p>
+                </div>
+                <div>
+                  <h3>Solution</h3>
+                  <p>
+                    A full-stack assistant using static/heuristic analysis today, with an architecture designed
+                    for future integration of real AI models and APIs when cost and product needs allow.
+                  </p>
+                </div>
+                <div>
+                  <h3>My contribution</h3>
+                  <p>
+                    End-to-end ownership: React dashboard, Node.js/Express backend, GitHub OAuth &amp; webhooks,
+                    Supabase persistence, Socket.IO live updates, and Railway deployment.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="project__body">
-              <span class="project__badge">Web App</span>
-              <h3>AI Code Review Assistant</h3>
-              <p>GitHub-integrated platform for automated code analysis, AI-generated reports, and real-time review dashboards.</p>
-              <div class="tags"><span>React</span><span>Node.js</span><span>Supabase</span><span>Socket.IO</span><span>GitHub API</span></div>
+              <ul class="featured__points">
+                <li>GitHub OAuth + repository connection</li>
+                <li>Webhook-triggered analysis pipeline</li>
+                <li>Structured findings with severity scores</li>
+                <li>Real-time review dashboard</li>
+                <li>Review history &amp; run detail views</li>
+              </ul>
+              <div class="tags">
+                <span>React</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>Express</span>
+                <span>Supabase</span><span>Socket.IO</span><span>GitHub API</span><span>Redis</span><span>Railway</span>
+              </div>
+              <div class="featured__actions">
+                <a
+                  href="https://ai-powered-code-review-assistant-production.up.railway.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary"
+                >Live Demo</a>
+                <a
+                  href="https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--ghost"
+                ><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                <a href="projects/ai-code-review.html" class="btn btn--ghost">Full Case Study</a>
+                <button type="button" class="btn btn--ghost" onclick="openCaseStudy('aireview')">Quick Overview</button>
+              </div>
             </div>
           </article>
-
-          <div class="projects-row">
-            <article class="project glass reveal-stagger" data-tilt>
-              <div class="project__visual">
-                <img src="medpal.png" alt="MedPal" loading="lazy" />
-                <div class="project__overlay">
-                  <button class="project__btn" onclick="openDemo()"><i class="fas fa-play"></i> Live Demo</button>
-                  <a href="https://github.com/dijanahasanii/MedPal" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                  <button class="project__btn" onclick="openCaseStudy('medpal')"><i class="fas fa-book-open"></i> Case Study</button>
-                </div>
-              </div>
-              <div class="project__body">
-                <span class="project__badge">Web App</span>
-                <h3>MedPal</h3>
-                <p>Digital health platform with role-based dashboards for clinics, doctors, and patients.</p>
-                <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
-              </div>
-            </article>
-
-            <article class="project glass reveal-stagger" data-tilt>
-              <div class="project__visual">
-                <img src="travelblog.png" alt="Wandr" loading="lazy" />
-                <div class="project__overlay">
-                  <a href="https://github.com/dijanahasanii/TravelBlog" target="_blank" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                  <button class="project__btn" onclick="openCaseStudy('wandr')"><i class="fas fa-book-open"></i> Case Study</button>
-                </div>
-              </div>
-              <div class="project__body">
-                <span class="project__badge">Web App</span>
-                <h3>Wandr</h3>
-                <p>Microservices travel platform with Docker Compose and real-time notifications.</p>
-                <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span></div>
-              </div>
-            </article>
-
-            <article class="project glass reveal-stagger" data-tilt>
-              <div class="project__visual">
-                <img src="personal-safety.png" alt="Personal Safety App" loading="lazy" />
-                <div class="project__overlay">
-                  <a href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener" class="project__btn"><i class="fab fa-github"></i> GitHub</a>
-                  <button class="project__btn" onclick="openCaseStudy('safety')"><i class="fas fa-book-open"></i> Case Study</button>
-                </div>
-              </div>
-              <div class="project__body">
-                <span class="project__badge">Mobile App</span>
-                <h3>Personal Safety App</h3>
-                <p>A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing, safety check-ins, fake calls, and activity history — with data stored on your device.</p>
-                <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span></div>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
-      <!-- JOURNEY / TIMELINE -->
-      <section id="journey" class="section section-fade">
-        <div class="wrap">
-          <header class="section-head section-head--center">
-            <span class="section-tag">Journey</span>
-            <h2 class="section-title">Career <span class="gradient-text">timeline</span></h2>
-          </header>
-          <div class="timeline">
-            <div class="timeline__line" aria-hidden="true"></div>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <time>2022 — 2026</time>
-                <h3>Bachelor · Computer Science & Engineering</h3>
-                <p>Isa Boletini University — algorithms, software engineering, databases, and mobile development.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <time>Sep 2025 — Mar 2026</time>
-                <h3>Full Stack Developer · AlphAEcho</h3>
-                <p>Building production web apps with React, Next.js, Tailwind CSS, and Supabase in Prishtina, Kosovo.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <h3>Personal Safety App</h3>
-                <p>A personal safety app built with Expo and React Native — SOS alerts, emergency contacts, location sharing, check-ins, fake calls, and on-device data storage.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <h3>MedPal · Digital Health Platform</h3>
-                <p>Full-stack health management platform with role-based dashboards for clinics, doctors, and patients.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <h3>Wandr · Travel Blog Platform</h3>
-                <p>Microservices architecture with Docker, MongoDB, and a React frontend for travel experiences.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <h3>AI-Powered Code Review Assistant</h3>
-                <p>Bachelor thesis — GitHub-integrated analysis platform with real-time dashboards, deployed on Railway with Supabase and Redis.</p>
-              </div>
-            </article>
-
-            <article class="timeline__item reveal-stagger timeline__item--future">
-              <div class="timeline__dot"></div>
-              <div class="timeline__card glass">
-                <time>Future</time>
-                <h3>Master's Degree</h3>
-                <p>Continuing academic growth in advanced software engineering and systems design.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE AREAS -->
+      <!-- EXPERIENCE -->
       <section id="experience" class="section section-fade">
         <div class="wrap">
           <header class="section-head section-head--center">
             <span class="section-tag">Experience</span>
-            <h2 class="section-title">What I <span class="gradient-text">bring</span></h2>
+            <h2 class="section-title">Professional <span class="gradient-text">experience</span></h2>
           </header>
-          <div class="exp-grid">
-            <article class="exp-card glass reveal-stagger" data-tilt>
-              <i class="fas fa-layer-group"></i>
-              <h3>Full Stack Development</h3>
-              <p>End-to-end product delivery — React frontends, Node.js APIs, database design, and deployment.</p>
+
+          <article class="role glass">
+            <div class="role__meta">
+              <time datetime="2025-09">Sep 2025 — Mar 2026</time>
+              <span class="role__place">Prishtina, Kosovo</span>
+            </div>
+            <h3 class="role__title">Full Stack Developer</h3>
+            <p class="role__company">AlphAEcho</p>
+            <p class="role__summary">
+              Built and maintained production web applications with a frontend-first focus — shipping responsive
+              interfaces, integrating APIs, and collaborating on real product features in a team environment.
+            </p>
+            <ul class="role__list">
+              <li>Developed UI with React, Next.js, and Tailwind CSS</li>
+              <li>Worked with Supabase for backend services and data workflows</li>
+              <li>Implemented responsive, accessible interfaces for production use</li>
+              <li>Collaborated on debugging, testing, and feature delivery</li>
+            </ul>
+            <div class="tags">
+              <span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Supabase</span><span>JavaScript</span>
+            </div>
+          </article>
+
+          <div class="edu-row">
+            <article class="edu glass">
+              <time>2022 — 2026</time>
+              <h3>BSc · Computer Science &amp; Engineering</h3>
+              <p>Isa Boletini University — software engineering, databases, algorithms, and mobile development.</p>
             </article>
-            <article class="exp-card glass reveal-stagger" data-tilt>
-              <i class="fas fa-paint-brush"></i>
-              <h3>Frontend Development</h3>
-              <p>Pixel-perfect, accessible interfaces with modern CSS, component architecture, and motion design.</p>
+            <article class="edu glass edu--future">
+              <time>Next</time>
+              <h3>Master’s Degree</h3>
+              <p>Planning continued study in advanced software engineering and systems design.</p>
             </article>
-            <article class="exp-card glass reveal-stagger" data-tilt>
-              <i class="fas fa-graduation-cap"></i>
-              <h3>Academic Projects</h3>
-              <p>CS fundamentals applied to real software — algorithms, databases, and engineering principles.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SELECTED PROJECTS -->
+      <section id="projects" class="section section-fade section--projects">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Selected Work</span>
+            <h2 class="section-title">More <span class="gradient-text">projects</span></h2>
+            <p class="section-desc">Full-stack products and mobile experiences — with clear ownership of what I built.</p>
+          </header>
+
+          <div class="project-list">
+            <article class="project-card glass">
+              <a href="projects/medpal.html" class="project-card__media">
+                <img src="medpal.png" alt="MedPal digital health platform interface" loading="lazy" />
+              </a>
+              <div class="project-card__body">
+                <span class="project__badge">01 · Full Stack · Health</span>
+                <h3>MedPal</h3>
+                <p>
+                  Digital health platform with role-based dashboards for clinics, doctors, and patients —
+                  authentication, appointments, and patient records on a React + Node.js stack.
+                </p>
+                <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+                <div class="project-card__actions">
+                  <button type="button" class="btn btn--ghost btn--sm" onclick="openDemo()">Live Demo</button>
+                  <a href="https://github.com/dijanahasanii/MedPal" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                  <a href="projects/medpal.html" class="btn btn--ghost btn--sm">Case Study</a>
+                </div>
+              </div>
             </article>
-            <article class="exp-card glass reveal-stagger" data-tilt>
-              <i class="fas fa-rocket"></i>
-              <h3>Personal Projects</h3>
-              <p>Self-driven builds from concept to production — health, travel, safety, and developer tools.</p>
+
+            <article class="project-card glass project-card--reverse">
+              <a href="projects/wandr.html" class="project-card__media">
+                <img src="travelblog.png" alt="Wandr travel platform interface" loading="lazy" />
+              </a>
+              <div class="project-card__body">
+                <span class="project__badge">02 · Microservices · Travel</span>
+                <h3>Wandr</h3>
+                <p>
+                  Travel experience platform built with a microservices architecture — Docker Compose services,
+                  MongoDB, React frontend, and real-time notifications for shared travel posts.
+                </p>
+                <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span></div>
+                <div class="project-card__actions">
+                  <a href="https://github.com/dijanahasanii/TravelBlog" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                  <a href="projects/wandr.html" class="btn btn--ghost btn--sm">Case Study</a>
+                </div>
+              </div>
             </article>
-            <article class="exp-card glass reveal-stagger" data-tilt>
-              <i class="fab fa-github"></i>
-              <h3>Open Source Learning</h3>
-              <p>Continuous growth through Git workflows, code reviews, and community-driven best practices.</p>
+
+            <article class="project-card glass">
+              <a href="projects/personal-safety.html" class="project-card__media project-card__media--mobile">
+                <img src="personal-safety.png" alt="Personal Safety App onboarding welcome screen" loading="lazy" />
+              </a>
+              <div class="project-card__body">
+                <span class="project__badge">03 · Mobile · Expo</span>
+                <h3>Personal Safety App</h3>
+                <p>
+                  A personal safety app built with Expo and React Native. SOS alerts, emergency contacts,
+                  location sharing, safety check-ins, fake calls, and activity history — with data stored on your device.
+                </p>
+                <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span></div>
+                <div class="project-card__actions">
+                  <a href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener" class="btn btn--ghost btn--sm"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                  <a href="projects/personal-safety.html" class="btn btn--ghost btn--sm">Case Study</a>
+                </div>
+              </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT I BUILD + SKILLS -->
+      <section id="skills" class="section section-fade">
+        <div class="wrap">
+          <header class="section-head section-head--center">
+            <span class="section-tag">Capabilities</span>
+            <h2 class="section-title">What I <span class="gradient-text">build</span></h2>
+          </header>
+
+          <div class="build-grid">
+            <article class="build-card glass">
+              <h3>Modern Web Applications</h3>
+              <p>React · Next.js · JavaScript · Tailwind CSS</p>
+            </article>
+            <article class="build-card glass">
+              <h3>AI-Powered Applications</h3>
+              <p>AI-assisted workflows · Developer tooling · Prompt engineering · Extensible analysis pipelines</p>
+            </article>
+            <article class="build-card glass">
+              <h3>Full-Stack Systems</h3>
+              <p>Node.js · Express · Supabase · MongoDB · REST APIs</p>
+            </article>
+            <article class="build-card glass">
+              <h3>User-Focused Interfaces</h3>
+              <p>Responsive design · Reusable components · UI/UX · Accessibility</p>
+            </article>
+          </div>
+
+          <div class="skill-groups">
+            <div class="skill-group glass">
+              <h3>Frontend</h3>
+              <ul>
+                <li>React</li>
+                <li>Next.js</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>React Native</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+            <div class="skill-group glass">
+              <h3>Backend</h3>
+              <ul>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>Supabase</li>
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
+            <div class="skill-group glass">
+              <h3>AI</h3>
+              <ul>
+                <li>AI-assisted development</li>
+                <li>Prompt engineering</li>
+                <li>AI-powered applications</li>
+                <li>AI workflows</li>
+              </ul>
+            </div>
+            <div class="skill-group glass">
+              <h3>Tools</h3>
+              <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Docker</li>
+                <li>Railway</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section section-fade">
+        <div class="wrap about-block">
+          <header class="section-head">
+            <span class="section-tag">About</span>
+            <h2 class="section-title">A bit <span class="gradient-text">about me</span></h2>
+          </header>
+          <div class="about-block__grid">
+            <div class="about-block__copy">
+              <p>
+                I’m Dijana Hasani, a Computer Science &amp; Engineering graduate and frontend-focused full-stack
+                developer. I build clean, responsive, user-focused digital experiences and full-stack applications
+                with React, Next.js, Tailwind CSS, Supabase, Node.js, and related technologies.
+              </p>
+              <p>
+                I’m especially interested in frontend development, product-focused UI, AI-powered applications,
+                and automation — and I care about shipping interfaces that feel intentional and usable.
+              </p>
+            </div>
+            <aside class="interest glass">
+              <h3>Currently interested in</h3>
+              <ul>
+                <li>Frontend Development</li>
+                <li>Full-Stack Development</li>
+                <li>AI-Powered Applications</li>
+                <li>AI Automation</li>
+                <li>Product &amp; UI Development</li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
@@ -349,33 +448,36 @@
       <!-- CONTACT -->
       <section id="contact" class="section section-fade">
         <div class="wrap">
-          <div class="contact glass reveal-stagger">
+          <div class="contact glass">
             <header class="section-head">
               <span class="section-tag">Contact</span>
-              <h2 class="section-title">Let's build something<br /><span class="gradient-text">exceptional.</span></h2>
-              <p class="section-desc">Open to internships, junior roles, and learning-focused opportunities.</p>
+              <h2 class="section-title">Have a project, opportunity,<br />or idea in mind?</h2>
+              <p class="section-desc section-desc--left">
+                I’m currently open to frontend, full-stack, and AI-focused opportunities where I can contribute
+                to real-world products and continue growing as an engineer.
+              </p>
             </header>
             <div class="contact__grid">
-              <a href="mailto:dijanahasani14@gmail.com" class="contact__item magnetic">
-                <i class="fas fa-envelope"></i>
+              <a href="mailto:dijanahasani14@gmail.com" class="contact__item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
                 <div><strong>Email</strong><span>dijanahasani14@gmail.com</span></div>
               </a>
-              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" class="contact__item magnetic">
-                <i class="fab fa-linkedin-in"></i>
-                <div><strong>LinkedIn</strong><span>linkedin.com/in/dijana-hasani-19b8a92b2</span></div>
+              <a href="https://www.linkedin.com/in/dijana-hasani-19b8a92b2" target="_blank" rel="noopener" class="contact__item">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                <div><strong>LinkedIn</strong><span>dijana-hasani</span></div>
               </a>
-              <a href="https://github.com/dijanahasanii" target="_blank" class="contact__item magnetic">
-                <i class="fab fa-github"></i>
-                <div><strong>GitHub</strong><span>github.com/dijanahasanii</span></div>
+              <a href="https://github.com/dijanahasanii" target="_blank" rel="noopener" class="contact__item">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <div><strong>GitHub</strong><span>dijanahasanii</span></div>
               </a>
-              <div class="contact__item contact__item--static">
-                <i class="fas fa-map-marker-alt"></i>
-                <div><strong>Location</strong><span>Prishtina, Kosovo</span></div>
-              </div>
+              <a href="cv.html" target="_blank" rel="noopener" class="contact__item">
+                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                <div><strong>CV</strong><span>Download resume</span></div>
+              </a>
             </div>
-            <a href="mailto:dijanahasani14@gmail.com" class="btn btn--primary btn--send magnetic">
-              <span>Send Message</span>
-              <i class="fas fa-paper-plane"></i>
+            <a href="mailto:dijanahasani14@gmail.com" class="btn btn--primary btn--send">
+              <span>Send Email</span>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -384,30 +486,28 @@
 
     <footer class="footer">
       <div class="wrap footer__inner">
-        <p class="footer__brand">Designed &amp; Developed by <strong>Dijana Hasani</strong></p>
-        <p class="footer__tech">Built with React · Node.js · Modern CSS</p>
+        <p class="footer__brand">Designed &amp; developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__tech">React · Next.js · Node.js · Modern CSS</p>
         <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
       </div>
     </footer>
 
-    <button class="fab-top magnetic" id="fab-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="fab-top" id="fab-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
-    <!-- VIDEO MODALS -->
-    <div id="demo-modal" class="modal" onclick="closeDemo(event)">
+    <div id="demo-modal" class="modal" onclick="closeDemo(event)" role="dialog" aria-modal="true" aria-label="MedPal demo video">
       <div class="modal__box glass">
-        <button class="modal__close" onclick="closeDemo()">&times;</button>
+        <button class="modal__close" onclick="closeDemo()" aria-label="Close demo">&times;</button>
         <div class="modal__video"><iframe id="demo-iframe" src="" title="MedPal Demo" allowfullscreen></iframe></div>
       </div>
     </div>
 
-    <!-- CASE STUDY MODAL -->
-    <div id="case-modal" class="modal" onclick="closeCaseStudy(event)">
+    <div id="case-modal" class="modal" onclick="closeCaseStudy(event)" role="dialog" aria-modal="true" aria-label="Project overview">
       <div class="modal__box modal__box--wide glass">
-        <button class="modal__close" onclick="closeCaseStudy()">&times;</button>
+        <button class="modal__close" onclick="closeCaseStudy()" aria-label="Close overview">&times;</button>
         <div class="case" id="case-content"></div>
       </div>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>

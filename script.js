@@ -1,7 +1,6 @@
 document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 /* ─── THEME ─── */
 const THEME_KEY = 'theme';
@@ -22,28 +21,11 @@ themeToggle?.addEventListener('click', () => {
   applyTheme(next);
 });
 
-/* ─── SKILLS DATA ─── */
-const SKILLS = [
-  { name: 'React', icon: 'fab fa-react', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Next.js', icon: 'fas fa-n', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'JavaScript', icon: 'fab fa-js', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'TypeScript', icon: 'fas fa-code', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Tailwind', icon: 'fas fa-wind', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Node.js', icon: 'fab fa-node-js', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Express', icon: 'fas fa-server', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Supabase', icon: 'fas fa-database', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'PostgreSQL', icon: 'fas fa-database', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'MongoDB', icon: 'fas fa-leaf', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'MySQL', icon: 'fas fa-database', level: 'Proficient', levelClass: 'level--proficient' },
-  { name: 'Docker', icon: 'fab fa-docker', level: 'Proficient', levelClass: 'level--proficient' },
-];
-
-/* ─── PROJECT LINKS (update demo URL when deployed) ─── */
+/* ─── PROJECT LINKS ─── */
 const PROJECT_LINKS = {
   aiReview: {
     github: 'https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant',
     demo: 'https://ai-powered-code-review-assistant-production.up.railway.app/',
-    cover: 'code-review.png',
     gallery: [
       { src: 'code-review-repos.png', alt: 'Connected repositories dashboard' },
       { src: 'code-review-run-detail.png', alt: 'Automated review run with findings and quality score' },
@@ -54,52 +36,98 @@ const PROJECT_LINKS = {
 const CASE_STUDIES = {
   medpal: {
     title: 'MedPal — Digital Health Platform',
+    overview: 'A full-stack digital health platform for clinics, doctors, and patients with role-based dashboards.',
     problem: 'Healthcare clinics needed a unified system to manage patients, doctors, and appointments without fragmented tools.',
-    solution: 'Built a full-stack health management platform with role-based dashboards for admins, doctors, and patients.',
-    features: ['Role-based authentication', 'Appointment scheduling', 'Patient records management', 'Reusable React component library', 'Responsive dashboards'],
+    solution: 'Built a React SPA with a Node.js/Express REST API and MongoDB, delivering role-based dashboards for admins, doctors, and patients.',
+    role: 'Full Stack Developer — UI design, frontend architecture, API integration, authentication flows, and database modeling.',
+    features: [
+      'Role-based authentication (admin, doctor, patient)',
+      'Appointment scheduling',
+      'Patient records management',
+      'Reusable React component library',
+      'Responsive dashboards',
+    ],
+    challenges: [
+      'Modeling role-based access across shared health workflows',
+      'Keeping dashboards consistent while serving different user roles',
+    ],
+    results: 'Delivered a working full-stack health management application with authenticated role-based access and a demoable UI.',
     tech: ['React', 'Node.js', 'Express', 'MongoDB'],
     architecture: 'Monolithic REST API with React SPA frontend, MongoDB for flexible health records, JWT-based auth with role middleware.',
-    role: 'Full Stack Developer — UI design, frontend architecture, API integration, and database modeling.',
     github: 'https://github.com/dijanahasanii/MedPal',
     demo: true,
   },
   wandr: {
     title: 'Wandr — Travel Experience Platform',
+    overview: 'A microservices-based travel blogging platform for sharing experiences with photos, locations, and notifications.',
     problem: 'Travelers lacked a centralized platform to share experiences with location tagging and social engagement.',
-    solution: 'Microservices-based platform with Docker Compose, allowing users to post travel stories with photos and notifications.',
-    features: ['User accounts & profiles', 'Photo uploads with captions', 'Location selection', 'Real-time notifications', 'Containerized microservices'],
-    tech: ['React', 'Node.js', 'MongoDB', 'Docker', 'Microservices'],
-    architecture: 'Multiple Node.js services behind Docker Compose, shared MongoDB, React frontend communicating via API gateway pattern.',
+    solution: 'Designed a Docker Compose microservices architecture with Node.js services, MongoDB, and a React frontend for travel posts and notifications.',
     role: 'Full Stack Developer — service design, frontend, Docker configuration, and API development.',
+    features: [
+      'User accounts & profiles',
+      'Photo uploads with captions',
+      'Location selection',
+      'Real-time notifications',
+      'Containerized microservices',
+    ],
+    challenges: [
+      'Splitting functionality across services without over-complicating local development',
+      'Coordinating Docker Compose services and shared data access',
+    ],
+    results: 'A working travel platform prototype that demonstrates microservices architecture, containerization, and full-stack delivery.',
+    tech: ['React', 'Node.js', 'MongoDB', 'Docker', 'Microservices'],
+    architecture: 'Multiple Node.js services behind Docker Compose, shared MongoDB, React frontend communicating via API patterns.',
     github: 'https://github.com/dijanahasanii/TravelBlog',
     demo: false,
   },
   safety: {
     title: 'Personal Safety App',
+    overview: 'A personal safety app built with Expo and React Native for on-device emergency and safety tools.',
     problem: 'People need quick, reliable safety tools on their phone — without sending sensitive data to the cloud.',
-    solution: 'A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing, safety check-ins, fake calls, and activity history — with data stored on your device.',
-    features: ['SOS alerts', 'Emergency contacts', 'Location sharing', 'Safety check-ins', 'Fake calls', 'Activity history', 'On-device data storage'],
-    tech: ['React Native', 'Expo', 'TypeScript', 'JavaScript'],
-    architecture: 'Expo app with file-based routing, native device APIs for location and notifications.',
+    solution: 'Built a cross-platform Expo app with SOS alerts, emergency contacts, location sharing, check-ins, fake calls, and activity history stored on the device.',
     role: 'Mobile Developer — UI/UX, feature implementation, and device integration.',
+    features: [
+      'SOS alerts',
+      'Emergency contacts',
+      'Location sharing',
+      'Safety check-ins',
+      'Fake calls',
+      'Activity history',
+      'On-device data storage',
+    ],
+    challenges: [
+      'Designing calm, clear emergency UX under stress scenarios',
+      'Keeping sensitive safety data local to the device',
+    ],
+    results: 'A polished mobile product experience focused on privacy-first safety workflows.',
+    tech: ['React Native', 'Expo', 'TypeScript', 'JavaScript'],
+    architecture: 'Expo app with file-based routing and native device APIs for location and notifications.',
     github: 'https://github.com/dijanahasanii/Personal-Safety-App',
     demo: false,
   },
   aireview: {
     title: 'AI-Powered Code Review Assistant',
-    problem: 'Teams need consistent, automated code quality feedback integrated directly into their GitHub workflow — not scattered manual reviews after every push.',
-    solution: 'Built a full-stack platform that connects GitHub repositories, analyzes code on push events, generates structured review reports, and streams results to a real-time dashboard.',
+    overview: 'Bachelor thesis project: GitHub-integrated code analysis with a real-time dashboard for structured review feedback.',
+    problem: 'Teams need consistent automated code quality feedback in their GitHub workflow — without expensive continuous AI API usage.',
+    solution: 'Built a full-stack platform that connects repositories, runs static/heuristic analysis on push events, and streams structured findings to a React dashboard. The architecture is designed so real AI model/API integration can be added later.',
+    role: 'Full Stack Developer — Bachelor thesis covering frontend, backend, OAuth, webhooks, persistence, and production deployment.',
     features: [
       'GitHub OAuth authentication',
       'Repository connection & webhooks',
-      'Automated code analysis engine',
-      'AI-generated review reports',
+      'Automated static/heuristic analysis',
+      'Structured findings with severity',
       'Real-time dashboard (Socket.IO)',
-      'Review history & statistics',
+      'Review history & run detail views',
     ],
-    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Supabase', 'Socket.IO', 'GitHub API', 'Redis'],
-    architecture: 'GitHub webhooks trigger analysis on push; the Node.js backend queues jobs in Redis, persists results to Supabase, and broadcasts live updates to the React dashboard via Socket.IO.',
-    role: 'Full Stack Developer — Bachelor thesis project covering frontend, backend, OAuth, webhooks, and production deployment.',
+    challenges: [
+      'Balancing AI ambition with practical API cost constraints',
+      'Building an analysis pipeline that stays useful without continuous LLM calls',
+      'Wiring OAuth, webhooks, queues, and live UI updates into one coherent system',
+    ],
+    results: 'Deployed thesis product on Railway with GitHub integration, review dashboards, and a path for future AI model integration.',
+    future: 'Deeper LLM integration for richer review suggestions, PR comments, and multi-language analysis.',
+    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Supabase', 'Socket.IO', 'GitHub API', 'Redis', 'Railway'],
+    architecture: 'GitHub webhooks trigger analysis; Node.js backend queues jobs in Redis, persists results to Supabase, and broadcasts live updates via Socket.IO.',
     github: PROJECT_LINKS.aiReview.github,
     demo: true,
     demoUrl: PROJECT_LINKS.aiReview.demo,
@@ -107,30 +135,22 @@ const CASE_STUDIES = {
   },
 };
 
-/* ─── RENDER SKILLS ─── */
-const skillsGrid = document.getElementById('skills-grid');
-if (skillsGrid) {
-  skillsGrid.innerHTML = SKILLS.map(
-    (s, i) => `
-    <article class="skill-card glass reveal-stagger" data-tilt style="transition-delay:${i * 0.04}s">
-      <i class="${s.icon}"></i>
-      <h4>${s.name}</h4>
-      <span class="level ${s.levelClass}">${s.level}</span>
-    </article>`
-  ).join('');
-}
-
-/* ─── VIDEO MODALS ─── */
+/* ─── VIDEO / CASE STUDY MODALS ─── */
 function openDemo() {
-  document.getElementById('demo-iframe').src = 'https://www.youtube.com/embed/StJY3I9yxDE?autoplay=1';
-  document.getElementById('demo-modal').classList.add('open');
+  const iframe = document.getElementById('demo-iframe');
+  const modal = document.getElementById('demo-modal');
+  if (!iframe || !modal) return;
+  iframe.src = 'https://www.youtube.com/embed/StJY3I9yxDE?autoplay=1';
+  modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeDemo(e) {
   if (e && e.target !== document.getElementById('demo-modal')) return;
-  document.getElementById('demo-iframe').src = '';
-  document.getElementById('demo-modal').classList.remove('open');
+  const iframe = document.getElementById('demo-iframe');
+  const modal = document.getElementById('demo-modal');
+  if (iframe) iframe.src = '';
+  modal?.classList.remove('open');
   document.body.style.overflow = '';
 }
 
@@ -138,26 +158,38 @@ function openCaseStudy(id) {
   const data = CASE_STUDIES[id];
   if (!data) return;
 
-  let actions = `<a href="${data.github}" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fab fa-github"></i> GitHub</a>`;
+  let actions = `<a href="${data.github}" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>`;
   if (data.demo && data.demoUrl) {
-    actions += `<a href="${data.demoUrl}" target="_blank" rel="noopener" class="btn btn--primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>`;
+    actions += `<a href="${data.demoUrl}" target="_blank" rel="noopener" class="btn btn--primary"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo</a>`;
   } else if (data.demo) {
-    actions += `<button class="btn btn--primary" onclick="closeCaseStudy();openDemo()"><i class="fas fa-play"></i> Live Demo</button>`;
+    actions += `<button type="button" class="btn btn--primary" onclick="closeCaseStudy();openDemo()"><i class="fas fa-play" aria-hidden="true"></i> Live Demo</button>`;
   }
 
   const gallery = data.images?.length
     ? `<h4>Screenshots</h4><div class="case__gallery">${data.images.map((img) => `<figure class="case__shot"><img src="${img.src}" alt="${img.alt}" loading="lazy" /></figure>`).join('')}</div>`
     : '';
 
+  const challenges = data.challenges?.length
+    ? `<h4>Challenges</h4><ul>${data.challenges.map((c) => `<li>${c}</li>`).join('')}</ul>`
+    : '';
+
+  const results = data.results ? `<h4>Results</h4><p>${data.results}</p>` : '';
+  const future = data.future ? `<h4>Future improvements</h4><p>${data.future}</p>` : '';
+  const overview = data.overview ? `<h4>Overview</h4><p>${data.overview}</p>` : '';
+
   document.getElementById('case-content').innerHTML = `
     <h2>${data.title}</h2>
+    ${overview}
     <h4>Problem</h4><p>${data.problem}</p>
     <h4>Solution</h4><p>${data.solution}</p>
     ${gallery}
-    <h4>Features</h4><ul>${data.features.map((f) => `<li>${f}</li>`).join('')}</ul>
+    <h4>My Role</h4><p>${data.role}</p>
+    <h4>Key Features</h4><ul>${data.features.map((f) => `<li>${f}</li>`).join('')}</ul>
     <h4>Technologies</h4><div class="tags">${data.tech.map((t) => `<span>${t}</span>`).join('')}</div>
     <h4>Architecture</h4><p>${data.architecture}</p>
-    <h4>My Role</h4><p>${data.role}</p>
+    ${challenges}
+    ${results}
+    ${future}
     <div class="case__actions">${actions}</div>`;
 
   document.getElementById('case-modal').classList.add('open');
@@ -194,10 +226,14 @@ function updateNav() {
 }
 
 window.addEventListener('scroll', () => {
-  navWrap.classList.toggle('scrolled', window.scrollY > 40);
+  navWrap?.classList.toggle('scrolled', window.scrollY > 40);
   updateNav();
-  document.getElementById('scroll-progress').style.width = `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`;
-  document.getElementById('fab-top').classList.toggle('visible', window.scrollY > 600);
+  const progress = document.getElementById('scroll-progress');
+  if (progress) {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+  }
+  document.getElementById('fab-top')?.classList.toggle('visible', window.scrollY > 600);
 }, { passive: true });
 
 if (navToggle && navList) {
@@ -285,7 +321,7 @@ document.getElementById('fab-top')?.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
-    if (href === '#') return;
+    if (!href || href === '#') return;
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
@@ -294,43 +330,12 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-/* ─── TYPING ─── */
-const phrases = [
-  'Full Stack Developer',
-  'React Specialist',
-  'Next.js Developer',
-  'React Native Developer',
-  'UI Lover',
-];
-
-const typedEl = document.getElementById('typed');
-let pi = 0;
-let ci = 0;
-let deleting = false;
-
-function typeLoop() {
-  if (!typedEl) return;
-  const current = phrases[pi];
-  typedEl.textContent = deleting ? current.substring(0, ci - 1) : current.substring(0, ci + 1);
-  ci += deleting ? -1 : 1;
-
-  let delay = deleting ? 45 : 80;
-  if (!deleting && ci === current.length) { delay = 2200; deleting = true; }
-  else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 500; }
-
-  setTimeout(typeLoop, delay);
-}
-
-if (typedEl && !prefersReducedMotion) typeLoop();
-else if (typedEl) typedEl.textContent = phrases[0];
-
 /* ─── SCROLL REVEAL ─── */
 const fadeObserver = new IntersectionObserver(
   (entries) => entries.forEach((e) => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
       fadeObserver.unobserve(e.target);
-      e.target.querySelectorAll('[data-count]').forEach(animateCount);
     }
   }),
   { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
@@ -338,133 +343,4 @@ const fadeObserver = new IntersectionObserver(
 
 document.querySelectorAll('.section-fade').forEach((el) => fadeObserver.observe(el));
 
-function animateCount(el) {
-  const target = parseInt(el.dataset.count, 10);
-  const suffix = el.dataset.suffix || '';
-  if (Number.isNaN(target)) return;
-  if (prefersReducedMotion) {
-    el.textContent = target + suffix;
-    return;
-  }
-  const duration = 1200;
-  const start = performance.now();
-  const step = (now) => {
-    const p = Math.min((now - start) / duration, 1);
-    el.textContent = Math.floor(p * target) + suffix;
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-
-/* ─── CURSOR ─── */
-if (canHover && !prefersReducedMotion) {
-  document.body.classList.add('has-cursor');
-  const dot = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-  let cx = 0; let cy = 0;
-
-  document.addEventListener('mousemove', (e) => { cx = e.clientX; cy = e.clientY; }, { passive: true });
-  document.querySelectorAll('a, button, .magnetic, [data-tilt]').forEach((el) => {
-    el.addEventListener('mouseenter', () => ring?.classList.add('hover'));
-    el.addEventListener('mouseleave', () => ring?.classList.remove('hover'));
-  });
-
-  const animCursor = () => {
-    if (dot) { dot.style.left = `${cx}px`; dot.style.top = `${cy}px`; }
-    if (ring) { ring.style.left = `${cx}px`; ring.style.top = `${cy}px`; }
-    requestAnimationFrame(animCursor);
-  };
-  animCursor();
-}
-
-/* ─── SPOTLIGHT ─── */
-if (canHover && !prefersReducedMotion) {
-  const spot = document.getElementById('spotlight');
-  let mx = 0; let my = 0; let sx = 0; let sy = 0;
-  document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
-  const animSpot = () => {
-    sx += (mx - sx) * 0.06;
-    sy += (my - sy) * 0.06;
-    if (spot) { spot.style.left = `${sx}px`; spot.style.top = `${sy}px`; }
-    requestAnimationFrame(animSpot);
-  };
-  animSpot();
-}
-
-/* ─── PARTICLES ─── */
-if (!prefersReducedMotion) {
-  const canvas = document.getElementById('particles');
-  const ctx = canvas?.getContext('2d');
-  if (canvas && ctx) {
-    let pts = [];
-    let w = 0; let h = 0;
-    const resize = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; };
-    const init = () => {
-      const n = Math.min(50, Math.floor(w * h / 25000));
-      pts = Array.from({ length: n }, () => ({
-        x: Math.random() * w, y: Math.random() * h,
-        r: Math.random() + 0.5, vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2,
-        a: Math.random() * 0.4 + 0.1,
-      }));
-    };
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h);
-      pts.forEach((p, i) => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139,92,246,${p.a})`;
-        ctx.fill();
-        for (let j = i + 1; j < pts.length; j++) {
-          const d = Math.hypot(p.x - pts[j].x, p.y - pts[j].y);
-          if (d < 90) {
-            ctx.strokeStyle = `rgba(139,92,246,${0.05 * (1 - d / 90)})`;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(pts[j].x, pts[j].y);
-            ctx.stroke();
-          }
-        }
-      });
-      requestAnimationFrame(draw);
-    };
-    resize(); init(); draw();
-    window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
-  }
-}
-
-/* ─── MAGNETIC ─── */
-if (canHover && !prefersReducedMotion) {
-  document.querySelectorAll('.magnetic').forEach((el) => {
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.2}px, ${(e.clientY - r.top - r.height / 2) * 0.2}px)`;
-    });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-  });
-}
-
-/* ─── TILT ─── */
-if (canHover && !prefersReducedMotion) {
-  document.querySelectorAll('[data-tilt]').forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--tilt-x', `${((e.clientY - r.top - r.height / 2) / (r.height / 2)) * -4}deg`);
-      card.style.setProperty('--tilt-y', `${((e.clientX - r.left - r.width / 2) / (r.width / 2)) * 4}deg`);
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.setProperty('--tilt-x', '0deg');
-      card.style.setProperty('--tilt-y', '0deg');
-    });
-  });
-}
-
 updateNav();
-
-const aiReviewDemo = document.getElementById('ai-review-demo');
-if (aiReviewDemo) {
-  if (PROJECT_LINKS.aiReview.demo) aiReviewDemo.href = PROJECT_LINKS.aiReview.demo;
-  else aiReviewDemo.remove();
-}

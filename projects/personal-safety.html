@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Safety App — Dijana Hasani</title>
+    <meta name="description" content="Case study: Personal Safety App — Expo and React Native app with SOS alerts, check-ins, and on-device data storage." />
+    <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/projects/personal-safety.html" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css?v=6" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <div class="aurora__layer aurora__layer--1"></div>
+      <div class="aurora__layer aurora__layer--2"></div>
+    </div>
+
+    <header class="nav-wrap" id="nav-wrap">
+      <nav class="nav glass" id="navbar" aria-label="Main">
+        <a href="../index.html#top" class="nav__logo">DH<span>.</span></a>
+        <ul class="nav__links" id="nav-links">
+          <li class="nav__menu-close">
+            <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+          </li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
+        </ul>
+        <a href="../cv.html" target="_blank" rel="noopener" class="nav__cta">Download CV</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </nav>
+    </header>
+
+    <main class="project-page wrap">
+      <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+
+      <header class="project-page__hero">
+        <span class="section-tag">Mobile · Expo · React Native</span>
+        <h1>Personal Safety App</h1>
+        <p>
+          A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing,
+          safety check-ins, fake calls, and activity history — with data stored on your device.
+        </p>
+        <div style="display:flex;justify-content:center;padding:20px 0 8px">
+          <img
+            src="../personal-safety.png"
+            alt="Personal Safety App onboarding welcome screen"
+            style="width:min(280px,80%);border-radius:24px;border:1px solid var(--glass-border);box-shadow:0 24px 48px rgba(0,0,0,.35)"
+          />
+        </div>
+      </header>
+
+      <div class="project-page__grid">
+        <div>
+          <section class="project-page__section">
+            <h2>Overview</h2>
+            <p>
+              A privacy-first mobile safety product focused on fast emergency actions and day-to-day safety tools,
+              designed for calm UX under stress.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Problem</h2>
+            <p>
+              People need reliable safety tools on their phone without sending sensitive data to the cloud.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Solution</h2>
+            <p>
+              An Expo + React Native app with SOS alerts, emergency contacts, location sharing, check-ins,
+              fake calls, and activity history stored locally on the device.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>My Role</h2>
+            <p>Mobile Developer — UI/UX, feature implementation, and device integration.</p>
+          </section>
+          <section class="project-page__section">
+            <h2>Key Features</h2>
+            <ul>
+              <li>SOS alerts</li>
+              <li>Emergency contacts</li>
+              <li>Location sharing</li>
+              <li>Safety check-ins</li>
+              <li>Fake calls</li>
+              <li>Activity history</li>
+              <li>On-device data storage</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Challenges</h2>
+            <ul>
+              <li>Designing clear emergency UX for stressful moments</li>
+              <li>Keeping sensitive safety data local to the device</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Results</h2>
+            <p>A polished mobile product experience focused on privacy-first safety workflows.</p>
+          </section>
+        </div>
+
+        <aside class="project-page__aside glass">
+          <h3>Stack</h3>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>JavaScript</span></div>
+          <h3>Links</h3>
+          <div class="project-page__links">
+            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">Designed &amp; developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
+      </div>
+    </footer>
+    <script src="../script.js?v=6"></script>
+  </body>
+</html>

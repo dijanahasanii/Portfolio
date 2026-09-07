@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedPal — Dijana Hasani</title>
+    <meta name="description" content="Case study: MedPal — a digital health platform with role-based dashboards for clinics, doctors, and patients." />
+    <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/projects/medpal.html" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css?v=6" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <div class="aurora__layer aurora__layer--1"></div>
+      <div class="aurora__layer aurora__layer--2"></div>
+    </div>
+
+    <header class="nav-wrap" id="nav-wrap">
+      <nav class="nav glass" id="navbar" aria-label="Main">
+        <a href="../index.html#top" class="nav__logo">DH<span>.</span></a>
+        <ul class="nav__links" id="nav-links">
+          <li class="nav__menu-close">
+            <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+          </li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
+        </ul>
+        <a href="../cv.html" target="_blank" rel="noopener" class="nav__cta">Download CV</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </nav>
+    </header>
+
+    <main class="project-page wrap">
+      <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+
+      <header class="project-page__hero">
+        <span class="section-tag">Full Stack · Health</span>
+        <h1>MedPal</h1>
+        <p>
+          A digital health management platform for clinics, doctors, and patients — with role-based dashboards,
+          appointments, and patient records.
+        </p>
+        <img class="project-page__cover" src="../medpal.png" alt="MedPal application interface" />
+      </header>
+
+      <div class="project-page__grid">
+        <div>
+          <section class="project-page__section">
+            <h2>Overview</h2>
+            <p>
+              MedPal is a full-stack web application that helps healthcare stakeholders manage patients, doctors,
+              and appointments in one place instead of fragmented tools.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Problem</h2>
+            <p>
+              Clinics needed a unified system for patient management and scheduling without switching between
+              disconnected workflows.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Solution</h2>
+            <p>
+              A React frontend with a Node.js/Express REST API and MongoDB, delivering authenticated role-based
+              dashboards for admins, doctors, and patients.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>My Role</h2>
+            <p>
+              Full Stack Developer — UI design, frontend architecture, API integration, authentication flows,
+              and database modeling.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>Key Features</h2>
+            <ul>
+              <li>Role-based authentication for admins, doctors, and patients</li>
+              <li>Appointment scheduling</li>
+              <li>Patient records management</li>
+              <li>Reusable React component library</li>
+              <li>Responsive dashboards</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Challenges</h2>
+            <ul>
+              <li>Modeling role-based access across shared health workflows</li>
+              <li>Keeping dashboards consistent while serving different user roles</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Results</h2>
+            <p>
+              A working full-stack health management application with authenticated role-based access and a demoable UI.
+            </p>
+          </section>
+        </div>
+
+        <aside class="project-page__aside glass">
+          <h3>Stack</h3>
+          <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+          <h3>Links</h3>
+          <div class="project-page__links">
+            <button type="button" class="btn btn--primary" onclick="openDemo()">Live Demo</button>
+            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/MedPal" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="demo-modal" class="modal" onclick="closeDemo(event)" role="dialog" aria-modal="true" aria-label="MedPal demo video">
+      <div class="modal__box glass">
+        <button class="modal__close" onclick="closeDemo()" aria-label="Close demo">&times;</button>
+        <div class="modal__video"><iframe id="demo-iframe" src="" title="MedPal Demo" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">Designed &amp; developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
+      </div>
+    </footer>
+    <script src="../script.js?v=6"></script>
+  </body>
+</html>

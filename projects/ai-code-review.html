@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Powered Code Review Assistant — Dijana Hasani</title>
+    <meta name="description" content="Case study: AI-Powered Code Review Assistant — Bachelor thesis by Dijana Hasani. GitHub-integrated code analysis with a real-time developer dashboard." />
+    <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/projects/ai-code-review.html" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css?v=6" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <div class="aurora__layer aurora__layer--1"></div>
+      <div class="aurora__layer aurora__layer--2"></div>
+    </div>
+
+    <header class="nav-wrap" id="nav-wrap">
+      <nav class="nav glass" id="navbar" aria-label="Main">
+        <a href="../index.html#top" class="nav__logo">DH<span>.</span></a>
+        <ul class="nav__links" id="nav-links">
+          <li class="nav__menu-close">
+            <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+          </li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
+        </ul>
+        <a href="../cv.html" target="_blank" rel="noopener" class="nav__cta">Download CV</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </nav>
+    </header>
+
+    <main class="project-page wrap">
+      <a class="project-page__back" href="../index.html#work"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+
+      <header class="project-page__hero">
+        <span class="section-tag">Bachelor Thesis · Featured</span>
+        <h1>AI-Powered Code Review Assistant</h1>
+        <p>
+          A GitHub-integrated platform that analyzes repositories, surfaces structured code quality findings,
+          and presents them in a real-time developer dashboard — designed for AI-assisted developer workflows.
+        </p>
+        <img class="project-page__cover" src="../code-review.png" alt="AI Code Review Assistant login screen" />
+      </header>
+
+      <div class="project-page__grid">
+        <div>
+          <section class="project-page__section">
+            <h2>Overview</h2>
+            <p>
+              This is my Bachelor thesis project. It connects to GitHub, analyzes source code on push events,
+              and shows structured review feedback in a live dashboard. The current implementation uses
+              static/heuristic analysis because continuous AI API usage has cost considerations. The architecture
+              is intentionally designed so real AI models/APIs can be integrated later.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>The Problem</h2>
+            <p>
+              Manual code reviews are inconsistent and hard to scale. Teams need automated quality feedback
+              inside their GitHub workflow — without depending on expensive continuous LLM calls for every push.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>The Solution</h2>
+            <p>
+              A full-stack assistant that authenticates with GitHub, connects repositories, runs analysis through
+              a backend pipeline, persists results, and streams updates to a React dashboard via Socket.IO.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>My Role</h2>
+            <p>
+              End-to-end ownership across frontend, backend, authentication, webhooks, persistence, live updates,
+              and production deployment on Railway.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Key Features</h2>
+            <ul>
+              <li>GitHub OAuth authentication</li>
+              <li>Repository connection and webhook-triggered analysis</li>
+              <li>Static/heuristic code analysis with severity scoring</li>
+              <li>Real-time review dashboard</li>
+              <li>Review history and detailed run views</li>
+            </ul>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Screenshots</h2>
+            <div class="gallery-grid">
+              <img src="../code-review-repos.png" alt="Repositories dashboard" />
+              <img src="../code-review-run-detail.png" alt="Review run detail with findings" />
+            </div>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Challenges</h2>
+            <ul>
+              <li>Balancing AI ambition with practical API cost constraints</li>
+              <li>Keeping analysis useful without continuous LLM calls</li>
+              <li>Integrating OAuth, webhooks, queues, and live UI into one coherent product</li>
+            </ul>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Results</h2>
+            <p>
+              Deployed thesis product with GitHub integration, review dashboards, and a clear path for future
+              AI model integration.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Future Improvements</h2>
+            <p>
+              Deeper LLM integration for richer review suggestions, pull request comments, and broader language support.
+            </p>
+          </section>
+        </div>
+
+        <aside class="project-page__aside glass">
+          <h3>Stack</h3>
+          <div class="tags">
+            <span>React</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>Express</span>
+            <span>Supabase</span><span>Socket.IO</span><span>GitHub API</span><span>Redis</span><span>Railway</span>
+          </div>
+          <h3>Links</h3>
+          <div class="project-page__links">
+            <a class="btn btn--primary" href="https://ai-powered-code-review-assistant-production.up.railway.app/" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">Designed &amp; developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
+      </div>
+    </footer>
+    <script src="../script.js?v=6"></script>
+  </body>
+</html>

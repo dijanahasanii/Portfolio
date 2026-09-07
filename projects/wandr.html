@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wandr — Dijana Hasani</title>
+    <meta name="description" content="Case study: Wandr — a microservices travel platform with Docker Compose, MongoDB, and a React frontend." />
+    <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/projects/wandr.html" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../style.css?v=6" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+      <div class="aurora__layer aurora__layer--1"></div>
+      <div class="aurora__layer aurora__layer--2"></div>
+    </div>
+
+    <header class="nav-wrap" id="nav-wrap">
+      <nav class="nav glass" id="navbar" aria-label="Main">
+        <a href="../index.html#top" class="nav__logo">DH<span>.</span></a>
+        <ul class="nav__links" id="nav-links">
+          <li class="nav__menu-close">
+            <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+          </li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
+        </ul>
+        <a href="../cv.html" target="_blank" rel="noopener" class="nav__cta">Download CV</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
+          <i class="fas fa-sun" aria-hidden="true"></i>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      </nav>
+    </header>
+
+    <main class="project-page wrap">
+      <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+
+      <header class="project-page__hero">
+        <span class="section-tag">Microservices · Travel</span>
+        <h1>Wandr</h1>
+        <p>
+          A travel experience platform built with a microservices architecture — Docker Compose services,
+          MongoDB, React frontend, and notifications for shared travel posts.
+        </p>
+        <img class="project-page__cover" src="../travelblog.png" alt="Wandr travel platform interface" />
+      </header>
+
+      <div class="project-page__grid">
+        <div>
+          <section class="project-page__section">
+            <h2>Overview</h2>
+            <p>
+              Wandr is a multi-user travel blogging platform where people can publish experiences with photos,
+              location data, and social engagement features.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Problem</h2>
+            <p>
+              Travelers needed a centralized place to share location-tagged experiences and interact with posts —
+              beyond a simple single-service CRUD app.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>The Solution</h2>
+            <p>
+              A Docker Compose microservices architecture with Node.js services, shared MongoDB, and a React
+              frontend for posting travel stories and receiving notifications.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>My Role</h2>
+            <p>
+              Full Stack Developer — service design, frontend development, Docker configuration, and API work.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>Key Features</h2>
+            <ul>
+              <li>User accounts and profiles</li>
+              <li>Photo uploads with captions</li>
+              <li>Location selection</li>
+              <li>Real-time notifications</li>
+              <li>Containerized microservices with Docker Compose</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Architecture</h2>
+            <p>
+              Multiple Node.js services run behind Docker Compose with shared MongoDB. The React frontend
+              communicates with backend services through API patterns suitable for a multi-service setup.
+            </p>
+          </section>
+          <section class="project-page__section">
+            <h2>Challenges</h2>
+            <ul>
+              <li>Splitting functionality across services without over-complicating local development</li>
+              <li>Coordinating Docker Compose services and shared data access</li>
+            </ul>
+          </section>
+          <section class="project-page__section">
+            <h2>Results</h2>
+            <p>
+              A working travel platform prototype that demonstrates microservices thinking, containerization,
+              and full-stack delivery.
+            </p>
+          </section>
+        </div>
+
+        <aside class="project-page__aside glass">
+          <h3>Stack</h3>
+          <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span><span>Microservices</span></div>
+          <h3>Links</h3>
+          <div class="project-page__links">
+            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/TravelBlog" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">Designed &amp; developed by <strong>Dijana Hasani</strong></p>
+        <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
+      </div>
+    </footer>
+    <script src="../script.js?v=6"></script>
+  </body>
+</html>
