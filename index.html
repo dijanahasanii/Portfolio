@@ -49,16 +49,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css?v=6" />
     <script>
       (function () {
         try {
-          if (localStorage.getItem('theme') === 'light') {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+          } else {
             document.documentElement.setAttribute('data-theme', 'light');
+            if (!savedTheme) localStorage.setItem('theme', 'light');
           }
-        } catch (e) { /* ignore */ }
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
       })();
     </script>
+    <link rel="stylesheet" href="style.css?v=6" />
   </head>
 
   <body>
@@ -185,7 +191,7 @@
                   <h3>My contribution</h3>
                   <p>
                     End-to-end ownership: React dashboard, Node.js/Express backend, GitHub OAuth &amp; webhooks,
-                    Supabase persistence, Socket.IO live updates, and Railway deployment.
+                    Supabase persistence, Socket.IO live updates, and Render deployment.
                   </p>
                 </div>
               </div>
@@ -198,11 +204,11 @@
               </ul>
               <div class="tags">
                 <span>React</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>Express</span>
-                <span>Supabase</span><span>Socket.IO</span><span>GitHub API</span><span>Redis</span><span>Railway</span>
+                <span>Supabase</span><span>Socket.IO</span><span>GitHub API</span><span>Redis</span><span>Render</span>
               </div>
               <div class="featured__actions">
                 <a
-                  href="https://ai-powered-code-review-assistant-production.up.railway.app/"
+                  href="https://ai-powered-code-review-assistant-fzbx.onrender.com/"
                   target="_blank"
                   rel="noopener"
                   class="btn btn--primary"

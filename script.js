@@ -16,6 +16,13 @@ const applyTheme = (theme) => {
   }
 };
 
+try {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  applyTheme(savedTheme || 'light');
+} catch (e) {
+  applyTheme('light');
+}
+
 themeToggle?.addEventListener('click', () => {
   const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   applyTheme(next);
@@ -25,7 +32,7 @@ themeToggle?.addEventListener('click', () => {
 const PROJECT_LINKS = {
   aiReview: {
     github: 'https://github.com/dijanahasanii/AI-Powered-Code-Review-Assistant',
-    demo: 'https://ai-powered-code-review-assistant-production.up.railway.app/',
+    demo: 'https://ai-powered-code-review-assistant-fzbx.onrender.com/',
     gallery: [
       { src: 'code-review-repos.png', alt: 'Connected repositories dashboard' },
       { src: 'code-review-run-detail.png', alt: 'Automated review run with findings and quality score' },
@@ -124,9 +131,9 @@ const CASE_STUDIES = {
       'Building an analysis pipeline that stays useful without continuous LLM calls',
       'Wiring OAuth, webhooks, queues, and live UI updates into one coherent system',
     ],
-    results: 'Deployed thesis product on Railway with GitHub integration, review dashboards, and a path for future AI model integration.',
+    results: 'Deployed thesis product on Render with GitHub integration, review dashboards, and a path for future AI model integration.',
     future: 'Deeper LLM integration for richer review suggestions, PR comments, and multi-language analysis.',
-    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Supabase', 'Socket.IO', 'GitHub API', 'Redis', 'Railway'],
+    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Supabase', 'Socket.IO', 'GitHub API', 'Redis', 'Render'],
     architecture: 'GitHub webhooks trigger analysis; Node.js backend queues jobs in Redis, persists results to Supabase, and broadcasts live updates via Socket.IO.',
     github: PROJECT_LINKS.aiReview.github,
     demo: true,
