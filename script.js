@@ -2,6 +2,29 @@ document.documentElement.classList.add('js');
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const PORTFOLIO_SCROLL_KEY = 'portfolio-project-return-scroll';
+const isPortfolioPage = /\/index\.html$|\/$/.test(window.location.pathname);
+
+if (isPortfolioPage) {
+  try {
+    const savedScroll = sessionStorage.getItem(PORTFOLIO_SCROLL_KEY);
+    if (savedScroll !== null) {
+      const restoreScroll = () => {
+        window.scrollTo(0, Number(savedScroll));
+        sessionStorage.removeItem(PORTFOLIO_SCROLL_KEY);
+      };
+      window.addEventListener('load', () => requestAnimationFrame(restoreScroll), { once: true });
+      window.addEventListener('pageshow', () => requestAnimationFrame(restoreScroll), { once: true });
+    }
+  } catch (e) { /* ignore storage restrictions */ }
+}
+
+document.querySelectorAll('a[href*="projects/"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    try { sessionStorage.setItem(PORTFOLIO_SCROLL_KEY, String(window.scrollY)); } catch (e) { /* ignore storage restrictions */ }
+  });
+});
+
 /* ─── THEME ─── */
 const THEME_KEY = 'theme';
 const themeToggle = document.getElementById('theme-toggle');
@@ -333,6 +356,17 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
+  });
+});
+
+document.querySelectorAll('.project-page__back').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const referrer = document.referrer ? new URL(document.referrer) : null;
+    const cameFromPortfolio = referrer?.origin === window.location.origin && /\/index\.html$|\/$/.test(referrer.pathname);
+    if (cameFromPortfolio && window.history.length > 1) {
+      e.preventDefault();
+      window.history.back();
     }
   });
 });
