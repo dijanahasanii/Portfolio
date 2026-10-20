@@ -53,14 +53,13 @@
       (function () {
         try {
           const savedTheme = localStorage.getItem('theme');
-          if (savedTheme === 'dark') {
-            document.documentElement.removeAttribute('data-theme');
-          } else {
+          if (savedTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
-            if (!savedTheme) localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
           }
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.removeAttribute('data-theme');
         }
       })();
     </script>
@@ -264,9 +263,9 @@
               <p>Isa Boletini University — software engineering, databases, algorithms, and mobile development.</p>
             </article>
             <article class="edu glass edu--future">
-              <time>Next</time>
+              <time>2026-2028</time>
               <h3>Master’s Degree</h3>
-              <p>Planning continued study in advanced software engineering and systems design.</p>
+              <p>UBT —  Data Science and Artificial Intelligence</p>
             </article>
           </div>
         </div>

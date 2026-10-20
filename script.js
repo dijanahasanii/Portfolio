@@ -41,9 +41,9 @@ const applyTheme = (theme) => {
 
 try {
   const savedTheme = localStorage.getItem(THEME_KEY);
-  applyTheme(savedTheme || 'light');
+  applyTheme(savedTheme || 'dark');
 } catch (e) {
-  applyTheme('light');
+  applyTheme('dark');
 }
 
 themeToggle?.addEventListener('click', () => {

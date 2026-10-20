@@ -15,14 +15,13 @@
       (function () {
         try {
           const savedTheme = localStorage.getItem('theme');
-          if (savedTheme === 'dark') {
-            document.documentElement.removeAttribute('data-theme');
-          } else {
+          if (savedTheme === 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
-            if (!savedTheme) localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.removeAttribute('data-theme');
           }
         } catch (e) {
-          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.removeAttribute('data-theme');
         }
       })();
     </script>
