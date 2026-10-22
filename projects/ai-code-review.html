@@ -41,8 +41,9 @@
           <li class="nav__menu-close">
             <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
           </li>
-          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
@@ -60,11 +61,11 @@
       <a class="project-page__back" href="../index.html#work"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
 
       <header class="project-page__hero">
-        <span class="section-tag">Bachelor Thesis · Featured</span>
+        <span class="section-tag">Bachelor Thesis · Systems &amp; Developer Tooling</span>
         <h1>AI-Powered Code Review Assistant</h1>
         <p>
-          A GitHub-integrated platform that analyzes repositories, surfaces structured code quality findings,
-          and presents them in a real-time developer dashboard — designed for AI-assisted developer workflows.
+          An automated repository inspection platform featuring a Git snapshot rule analyzer, severity scoring algorithm,
+          and a real-time developer dashboard powered by Socket.IO.
         </p>
         <img class="project-page__cover" src="../code-review.png" alt="AI Code Review Assistant login screen" />
       </header>
@@ -74,46 +75,47 @@
           <section class="project-page__section">
             <h2>Overview</h2>
             <p>
-              This is my Bachelor thesis project. It connects to GitHub, analyzes source code on push events,
-              and shows structured review feedback in a live dashboard. The current implementation uses
-              static/heuristic analysis because continuous AI API usage has cost considerations. The architecture
-              is intentionally designed so real AI models/APIs can be integrated later.
+              This is my Bachelor thesis project: an automated code review and repository inspection system that connects to
+              GitHub via OAuth 2.0 and processes push events via webhooks. The current production engine executes a deterministic
+              repository snapshot analyzer that traverses Git trees and runs weighted static checks across tracked files, with diff heuristic
+              fallbacks.
+            </p>
+            <p>
+              I chose a static heuristic engine over continuous live LLM calls to ensure instant review run times, zero recurring API expenses,
+              and repeatable results for developers. The pipeline architecture is intentionally structured with an extensible analysis interface,
+              making live LLM analysis an easy drop-in provider when cost and product scope permit.
             </p>
           </section>
 
           <section class="project-page__section">
-            <h2>The Problem</h2>
+            <h2>The Engineering Problem</h2>
             <p>
-              Manual code reviews are inconsistent and hard to scale. Teams need automated quality feedback
-              inside their GitHub workflow — without depending on expensive continuous LLM calls for every push.
+              Manual code reviews can bottleneck release cycles, while repetitive quality and security violations (unhandled async rejections,
+              exposed credentials, lingering debug statements) easily slip through. Existing commercial tools either require complex infrastructure
+              or run expensive third-party LLM queries on every single commit.
             </p>
           </section>
 
           <section class="project-page__section">
-            <h2>The Solution</h2>
+            <h2>Architecture &amp; Implementation</h2>
             <p>
-              A full-stack assistant that authenticates with GitHub, connects repositories, runs analysis through
-              a backend pipeline, persists results, and streams updates to a React dashboard via Socket.IO.
+              The system operates as an end-to-end full-stack pipeline:
             </p>
+            <ul>
+              <li><strong>Ingestion:</strong> GitHub OAuth 2.0 for user authentication and repository access; webhook endpoints capture push events with HMAC signature verification.</li>
+              <li><strong>Job Processing:</strong> Modular queue worker supporting both fast in-process execution and Redis/Bull job queues for distributed workloads.</li>
+              <li><strong>Analysis Engine:</strong> Fetches Git trees and blobs, runs weighted static AST and regex rules across .js, .ts, and .vue files, and computes overall quality and reliability scores.</li>
+              <li><strong>Auto-Remediation:</strong> Targeted fix service (targetedFixService.js) that generates precise source patches (e.g. wrapping unhandled async blocks in try/catch, commenting console statements, annotating secrets).</li>
+              <li><strong>Persistence &amp; Live Updates:</strong> Review runs and issue records are stored in Supabase (PostgreSQL), while progress events stream live to the React dashboard via Socket.IO.</li>
+            </ul>
           </section>
 
           <section class="project-page__section">
-            <h2>My Role</h2>
+            <h2>My Role &amp; Contributions</h2>
             <p>
-              End-to-end ownership across frontend, backend, authentication, webhooks, persistence, live updates,
+              End-to-end ownership across frontend, backend, OAuth security, webhook pipelines, persistence modeling, real-time WebSockets,
               and production deployment on Render.
             </p>
-          </section>
-
-          <section class="project-page__section">
-            <h2>Key Features</h2>
-            <ul>
-              <li>GitHub OAuth authentication</li>
-              <li>Repository connection and webhook-triggered analysis</li>
-              <li>Static/heuristic code analysis with severity scoring</li>
-              <li>Real-time review dashboard</li>
-              <li>Review history and detailed run views</li>
-            </ul>
           </section>
 
           <section class="project-page__section">
@@ -125,26 +127,19 @@
           </section>
 
           <section class="project-page__section">
-            <h2>Challenges</h2>
+            <h2>Key Challenges &amp; Trade-offs</h2>
             <ul>
-              <li>Balancing AI ambition with practical API cost constraints</li>
-              <li>Keeping analysis useful without continuous LLM calls</li>
-              <li>Integrating OAuth, webhooks, queues, and live UI into one coherent product</li>
+              <li><strong>Deterministic Analysis vs. LLM Cost:</strong> Balancing AI ambition with practical resource limits led to building a high-performance snapshot rule engine first, decoupling rule execution from the analysis interface.</li>
+              <li><strong>Precise Source Patching:</strong> Developing automated remediation logic that modifies only the exact implicated lines without corrupting surrounding AST structures or causing full-file rewrites.</li>
+              <li><strong>Asynchronous State Synchronization:</strong> Ensuring WebSocket broadcasts accurately reflect queue worker status across network re-connections.</li>
             </ul>
           </section>
 
           <section class="project-page__section">
-            <h2>Results</h2>
+            <h2>Results &amp; Future Development</h2>
             <p>
-              Deployed thesis product with GitHub integration, review dashboards, and a clear path for future
-              AI model integration.
-            </p>
-          </section>
-
-          <section class="project-page__section">
-            <h2>Future Improvements</h2>
-            <p>
-              Deeper LLM integration for richer review suggestions, pull request comments, and broader language support.
+              Successfully deployed on Render with complete GitHub OAuth, live webhook ingestion, real-time dashboard updates, and automated remediation.
+              Future iterations can plug in language model providers for contextual suggestions and automated pull request comments.
             </p>
           </section>
         </div>
@@ -152,8 +147,8 @@
         <aside class="project-page__aside glass">
           <h3>Stack</h3>
           <div class="tags">
-            <span>React</span><span>Vite</span><span>Tailwind</span><span>Node.js</span><span>Express</span>
-            <span>Supabase</span><span>Socket.IO</span><span>GitHub API</span><span>Redis</span><span>Render</span>
+            <span>Node.js</span><span>Express</span><span>React</span><span>Supabase (PostgreSQL)</span>
+            <span>Socket.IO</span><span>GitHub API</span><span>Redis / Bull</span><span>Vite</span><span>Tailwind</span><span>Render</span>
           </div>
           <h3>Links</h3>
           <div class="project-page__links">

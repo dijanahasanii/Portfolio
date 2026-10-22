@@ -41,8 +41,9 @@
           <li class="nav__menu-close">
             <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
           </li>
-          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
@@ -60,27 +61,27 @@
       <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
 
       <header class="project-page__hero">
-        <span class="section-tag">Mobile · Expo · React Native</span>
+        <span class="section-tag">Mobile Engineering · Privacy-First Architecture</span>
         <h1>Personal Safety App</h1>
         <p>
-          A personal safety app built with Expo and React Native. SOS alerts, emergency contacts, location sharing,
-          safety check-ins, fake calls, and activity history — with data stored on your device.
+          A cross-platform mobile application engineered with React Native, Expo, and TypeScript, utilizing native device
+          hardware modules and strictly on-device data persistence.
         </p>
       </header>
 
       <section class="project-page__screens glass" aria-labelledby="screens-title">
         <div>
-          <span class="section-tag">Product visuals</span>
-          <h2 id="screens-title">Screens and demo</h2>
-          <p>Explore the onboarding flow and a short walkthrough of the safety tools.</p>
+          <span class="section-tag">Product Walkthrough</span>
+          <h2 id="screens-title">Application Flow &amp; Safety Tools</h2>
+          <p>Explore the first-time setup flow, SOS alerting mechanics, and local safety utility screens.</p>
         </div>
         <div class="project-page__gallery">
-          <figure><img src="../1.jpg" alt="Personal Safety App welcome screen" loading="lazy" /><figcaption>01 · Welcome</figcaption></figure>
-          <figure><img src="../2.png" alt="Personal Safety App profile setup screen" loading="lazy" /><figcaption>02 · About you</figcaption></figure>
-          <figure><img src="../3.png" alt="Personal Safety App emergency contacts screen" loading="lazy" /><figcaption>03 · Emergency contacts</figcaption></figure>
-          <figure><img src="../4.png" alt="Personal Safety App SOS explanation screen" loading="lazy" /><figcaption>04 · How SOS works</figcaption></figure>
-          <figure><img src="../5.png" alt="Personal Safety App safety dashboard" loading="lazy" /><figcaption>05 · Safety status</figcaption></figure>
-          <figure><img src="../6.png" alt="Personal Safety App safety tools dashboard" loading="lazy" /><figcaption>06 · Safety tools</figcaption></figure>
+          <figure><img src="../1.jpg" alt="Personal Safety App welcome screen" loading="lazy" /><figcaption>01 &middot; Welcome</figcaption></figure>
+          <figure><img src="../2.png" alt="Personal Safety App profile setup screen" loading="lazy" /><figcaption>02 &middot; Profile Setup</figcaption></figure>
+          <figure><img src="../3.png" alt="Personal Safety App emergency contacts screen" loading="lazy" /><figcaption>03 &middot; Emergency Contacts</figcaption></figure>
+          <figure><img src="../4.png" alt="Personal Safety App SOS explanation screen" loading="lazy" /><figcaption>04 &middot; SOS Workflow</figcaption></figure>
+          <figure><img src="../5.png" alt="Personal Safety App safety dashboard" loading="lazy" /><figcaption>05 &middot; Safety Status</figcaption></figure>
+          <figure><img src="../6.png" alt="Personal Safety App safety tools dashboard" loading="lazy" /><figcaption>06 &middot; Tool Suite</figcaption></figure>
         </div>
       </section>
 
@@ -89,58 +90,69 @@
           <section class="project-page__section">
             <h2>Overview</h2>
             <p>
-              A privacy-first mobile safety product focused on fast emergency actions and day-to-day safety tools,
-              designed for calm UX under stress.
+              Personal Safety App is a mobile utility built to provide immediate assistance in high-stress or emergency situations.
+              Because emergency safety data (current location, personal contacts, movement logs) is highly sensitive, the application
+              was architected with a strict privacy-first principle: all records, contact numbers, and event history remain stored
+              locally on the device using AsyncStorage, with zero tracking or telemetry.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Problem</h2>
+            <h2>The Engineering Problem</h2>
             <p>
-              People need reliable safety tools on their phone without sending sensitive data to the cloud.
+              Emergency utilities must guarantee high availability under adverse conditions: weak cellular data connections, locked screens,
+              and stressful user interactions. Relying on remote cloud APIs to trigger SMS messages or store contact lists adds points of failure
+              and privacy risks.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Solution</h2>
+            <h2>Technical Implementation &amp; Hardware APIs</h2>
             <p>
-              An Expo + React Native app with SOS alerts, emergency contacts, location sharing, check-ins,
-              fake calls, and activity history stored locally on the device.
+              Built using React Native, Expo SDK 54, and TypeScript:
             </p>
-          </section>
-          <section class="project-page__section">
-            <h2>My Role</h2>
-            <p>Mobile Developer — UI/UX, feature implementation, and device integration.</p>
-          </section>
-          <section class="project-page__section">
-            <h2>Key Features</h2>
             <ul>
-              <li>SOS alerts</li>
-              <li>Emergency contacts</li>
-              <li>Location sharing</li>
-              <li>Safety check-ins</li>
-              <li>Fake calls</li>
-              <li>Activity history</li>
-              <li>On-device data storage</li>
+              <li><strong>Offline Data Persistence:</strong> Leverages AsyncStorage for on-device storage of user profile configurations, emergency contacts, and historical safety logs.</li>
+              <li><strong>One-Tap SOS Dispatch:</strong> Integrates Expo Location to capture high-accuracy GPS coordinates, generating pre-composed emergency SMS links via Expo SMS to instantly alert designated primary contacts.</li>
+              <li><strong>Native Contact Integration:</strong> Expo Contacts allows seamless selection from the user's phonebook, with fallback manual entry and validation.</li>
+              <li><strong>Safety Check-In Countdown:</strong> Configurable countdown timer with local push notifications and automated escalation alerts if a user fails to check in.</li>
+              <li><strong>Simulated Incoming Call:</strong> Integrates Expo AV (audio playback) and Expo Haptics (vibration patterns) to simulate incoming call rings, providing a realistic excuse to exit uncomfortable scenarios.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
-            <h2>Challenges</h2>
+            <h2>My Role &amp; Contributions</h2>
+            <p>
+              Mobile Engineer: end-to-end implementation from UX design and component hierarchy to native hardware integration,
+              TypeScript typing, and testing on physical mobile devices.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Key Challenges &amp; Trade-offs</h2>
             <ul>
-              <li>Designing clear emergency UX for stressful moments</li>
-              <li>Keeping sensitive safety data local to the device</li>
+              <li><strong>Stress-Resilient UX:</strong> Designing clear, oversized touch targets with instant tactile feedback so actions can be taken quickly without visual ambiguity.</li>
+              <li><strong>Hardware Permissions Handling:</strong> Gracefully managing system permission denials (Location, SMS, Contacts) with clear fallback instructions.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
             <h2>Results</h2>
-            <p>A polished mobile product experience focused on privacy-first safety workflows.</p>
+            <p>
+              A responsive, tested cross-platform mobile application providing dependable safety workflows with uncompromising user privacy.
+            </p>
           </section>
         </div>
 
         <aside class="project-page__aside glass">
           <h3>Stack</h3>
-          <div class="tags"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>JavaScript</span></div>
+          <div class="tags">
+            <span>React Native</span><span>Expo</span><span>TypeScript</span><span>AsyncStorage</span>
+            <span>Expo Location</span><span>Expo SMS</span><span>Expo Contacts</span><span>Expo Haptics</span>
+          </div>
           <h3>Links</h3>
           <div class="project-page__links">
-            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="btn btn--primary" href="https://github.com/dijanahasanii/Personal-Safety-App" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub Repository</a>
           </div>
         </aside>
       </div>

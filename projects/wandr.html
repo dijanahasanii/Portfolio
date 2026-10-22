@@ -41,8 +41,9 @@
           <li class="nav__menu-close">
             <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
           </li>
-          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
@@ -60,11 +61,11 @@
       <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
 
       <header class="project-page__hero">
-        <span class="section-tag">Microservices · Travel</span>
-        <h1>Wandr</h1>
+        <span class="section-tag">Distributed Systems · Microservices Architecture</span>
+        <h1>Wandr — Travel Experience Platform</h1>
         <p>
-          A travel experience platform built with a microservices architecture — Docker Compose services,
-          MongoDB, React frontend, and notifications for shared travel posts.
+          A distributed travel platform decomposed into independent microservices (User, Content, Location, Notification)
+          orchestrated via Docker Compose and connected to MongoDB and a React client.
         </p>
         <img class="project-page__cover" src="../travelblog.png" alt="Wandr travel platform interface" />
       </header>
@@ -74,69 +75,69 @@
           <section class="project-page__section">
             <h2>Overview</h2>
             <p>
-              Wandr is a multi-user travel blogging platform where people can publish experiences with photos,
-              location data, and social engagement features.
+              Wandr was built as the capstone project for the Advanced Programming course. Rather than building a conventional
+              monolithic CRUD application, the goal was to model, containerize, and deploy a distributed microservices system
+              with distinct service responsibilities, separate process lifecycles, and documented fault-tolerance plans.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Problem</h2>
+            <h2>The Engineering Problem</h2>
             <p>
-              Travelers needed a centralized place to share location-tagged experiences and interact with posts —
-              beyond a simple single-service CRUD app.
+              Monolithic architectures can become tightly coupled and difficult to scale when distinct features (such as real-time notifications
+              or geographic location lookups) have fundamentally different scaling profiles and data requirements than core user authentication
+              and content publishing.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Solution</h2>
+            <h2>Microservices Architecture</h2>
             <p>
-              A Docker Compose microservices architecture with Node.js services, shared MongoDB, and a React
-              frontend for posting travel stories and receiving notifications.
+              The system is containerized with Docker Compose across four decoupled backend services:
             </p>
-          </section>
-          <section class="project-page__section">
-            <h2>My Role</h2>
-            <p>
-              Full Stack Developer — service design, frontend development, Docker configuration, and API work.
-            </p>
-          </section>
-          <section class="project-page__section">
-            <h2>Key Features</h2>
             <ul>
-              <li>User accounts and profiles</li>
-              <li>Photo uploads with captions</li>
-              <li>Location selection</li>
-              <li>Real-time notifications</li>
-              <li>Containerized microservices with Docker Compose</li>
+              <li><strong>User Service:</strong> Handles user registration, credentials hashing, JWT token generation, and account profile lifecycle.</li>
+              <li><strong>Content Service:</strong> Manages travel story authoring, photo attachments, captions, comment threads, and social likes.</li>
+              <li><strong>Location Service:</strong> Manages geographic metadata, location search indexing, and destination tagging for travel posts.</li>
+              <li><strong>Notification Service:</strong> Dispatches real-time alerts for user interactions (likes, comments, new stories) across connected clients.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
-            <h2>Architecture</h2>
+            <h2>My Role &amp; Contributions</h2>
             <p>
-              Multiple Node.js services run behind Docker Compose with shared MongoDB. The React frontend
-              communicates with backend services through API patterns suitable for a multi-service setup.
+              Full Stack Engineer: microservices decomposition, Docker Compose service orchestration, Express REST API development,
+              MongoDB integration, React client views, and authoring comprehensive deployment hardening and failure mode analyses.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>Challenges</h2>
+            <h2>Key Challenges &amp; Trade-offs</h2>
             <ul>
-              <li>Splitting functionality across services without over-complicating local development</li>
-              <li>Coordinating Docker Compose services and shared data access</li>
+              <li><strong>Service Boundary Definitions:</strong> Designing clean boundaries between Content and Location without introducing circular dependencies or excessive network round-trips.</li>
+              <li><strong>Multi-Container Orchestration:</strong> Configuring Docker Compose networks, volume mounts, and service start order dependencies for deterministic local and production reproduction.</li>
+              <li><strong>Resilience &amp; Failure Modes:</strong> Producing a formal Failure Mode Analysis documenting graceful degradation when downstream services (e.g., Notification or Location) experience latency or outages.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
             <h2>Results</h2>
             <p>
-              A working travel platform prototype that demonstrates microservices thinking, containerization,
-              and full-stack delivery.
+              A working, containerized microservices platform demonstrating distributed system patterns, Docker container orchestration,
+              and thorough engineering documentation.
             </p>
           </section>
         </div>
 
         <aside class="project-page__aside glass">
           <h3>Stack</h3>
-          <div class="tags"><span>React</span><span>Node.js</span><span>Docker</span><span>MongoDB</span><span>Microservices</span></div>
+          <div class="tags">
+            <span>Docker</span><span>Docker Compose</span><span>Node.js</span><span>Express</span>
+            <span>MongoDB</span><span>Microservices</span><span>React</span>
+          </div>
           <h3>Links</h3>
           <div class="project-page__links">
-            <a class="btn btn--ghost" href="https://github.com/dijanahasanii/TravelBlog" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="btn btn--primary" href="https://github.com/dijanahasanii/Wandr" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub Repository</a>
           </div>
         </aside>
       </div>

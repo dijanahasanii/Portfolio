@@ -41,8 +41,9 @@
           <li class="nav__menu-close">
             <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
           </li>
-          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li class="nav__mobile-cv"><a href="../cv.html" target="_blank" rel="noopener">Download CV ↗</a></li>
@@ -60,11 +61,11 @@
       <a class="project-page__back" href="../index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
 
       <header class="project-page__hero">
-        <span class="section-tag">Full Stack · Health</span>
-        <h1>MedPal</h1>
+        <span class="section-tag">Full Stack · Healthcare Architecture</span>
+        <h1>MedPal — Digital Health Platform</h1>
         <p>
-          A digital health management platform for clinics, doctors, and patients — with role-based dashboards,
-          appointments, and patient records.
+          A healthcare operations platform engineered with role-based access control (Admin, Doctor, Patient),
+          relational document modeling in MongoDB, medical document uploads, and automated reminder workers.
         </p>
         <img class="project-page__cover" src="../medpal.png" alt="MedPal application interface" />
       </header>
@@ -74,62 +75,69 @@
           <section class="project-page__section">
             <h2>Overview</h2>
             <p>
-              MedPal is a full-stack web application that helps healthcare stakeholders manage patients, doctors,
-              and appointments in one place instead of fragmented tools.
+              MedPal is an end-to-end full-stack web application designed to unify clinic operations. Healthcare facilities
+              frequently struggle with disjointed tools for patient intake, appointment scheduling, and electronic records.
+              MedPal centralizes these operational flows under a secure, role-based architecture.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Problem</h2>
+            <h2>The Engineering Problem</h2>
             <p>
-              Clinics needed a unified system for patient management and scheduling without switching between
-              disconnected workflows.
+              Managing healthcare data requires strict access segregation between clinical staff and patients, robust relational
+              integrity (ensuring doctor availability matches booked slots without double-booking), and automated notification
+              workflows to minimize missed consultations.
             </p>
           </section>
+
           <section class="project-page__section">
-            <h2>The Solution</h2>
+            <h2>Architecture &amp; Technical Implementation</h2>
             <p>
-              A React frontend with a Node.js/Express REST API and MongoDB, delivering authenticated role-based
-              dashboards for admins, doctors, and patients.
+              The application is structured into a modular Express.js backend and a component-driven React client:
             </p>
-          </section>
-          <section class="project-page__section">
-            <h2>My Role</h2>
-            <p>
-              Full Stack Developer — UI design, frontend architecture, API integration, authentication flows,
-              and database modeling.
-            </p>
-          </section>
-          <section class="project-page__section">
-            <h2>Key Features</h2>
             <ul>
-              <li>Role-based authentication for admins, doctors, and patients</li>
-              <li>Appointment scheduling</li>
-              <li>Patient records management</li>
-              <li>Reusable React component library</li>
-              <li>Responsive dashboards</li>
+              <li><strong>Authentication &amp; RBAC:</strong> JWT authentication with custom middleware enforcing granular access controls across Admin, Doctor, and Patient roles.</li>
+              <li><strong>Data Modeling:</strong> Mongoose schemas with ObjectId references across Users, Appointments, Departments, Services, Documents, Visit Reports, and Working Hours.</li>
+              <li><strong>Appointment Engine:</strong> Dynamic validation of clinic working hours and physician availability to prevent scheduling conflicts.</li>
+              <li><strong>Document Management:</strong> Secure upload, retrieval, and deletion workflows for patient diagnostic reports and medical files.</li>
+              <li><strong>Background Automation:</strong> Scheduled background cron worker (reminderJob.js) scanning upcoming appointments and triggering notification alerts.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
-            <h2>Challenges</h2>
+            <h2>My Role &amp; Contributions</h2>
+            <p>
+              Full Stack Developer: architectural design, Express REST API development, JWT &amp; role middleware, MongoDB schema modeling,
+              and building the React single-page client interface.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>Key Challenges &amp; Trade-offs</h2>
             <ul>
-              <li>Modeling role-based access across shared health workflows</li>
-              <li>Keeping dashboards consistent while serving different user roles</li>
+              <li><strong>Relational Integrity in MongoDB:</strong> Implementing document references and populate patterns to maintain data consistency across appointment cancellations and doctor schedule changes without relational foreign keys.</li>
+              <li><strong>Role-Aware Component Architecture:</strong> Structuring frontend routes and shared component states so sensitive clinical actions remain strictly shielded from unauthorized roles.</li>
             </ul>
           </section>
+
           <section class="project-page__section">
             <h2>Results</h2>
             <p>
-              A working full-stack health management application with authenticated role-based access and a demoable UI.
+              Delivered a complete, demoable healthcare management platform with authenticated role separation, appointment lifecycle management,
+              and background cron automation.
             </p>
           </section>
         </div>
 
         <aside class="project-page__aside glass">
           <h3>Stack</h3>
-          <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+          <div class="tags">
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB (Mongoose)</span>
+            <span>JWT Auth</span><span>Node-Cron</span>
+          </div>
           <h3>Links</h3>
           <div class="project-page__links">
-            <button type="button" class="btn btn--primary" onclick="openDemo()">Live Demo</button>
+            <button type="button" class="btn btn--primary" onclick="openDemo()"><i class="fas fa-play" aria-hidden="true"></i> Video Walkthrough</button>
             <a class="btn btn--ghost" href="https://github.com/dijanahasanii/MedPal" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
           </div>
         </aside>
