@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI-Powered Code Review Assistant — Dijana Hasani</title>
-    <meta name="description" content="Case study: AI-Powered Code Review Assistant — Bachelor thesis by Dijana Hasani. GitHub-integrated code analysis with a real-time developer dashboard." />
+    <meta name="description" content="Dijana Hasani’s thesis project automates GitHub pull request reviews with static code checks and a dashboard that shows live progress and findings." />
     <link rel="canonical" href="https://dijanahasanii.github.io/Portfolio/projects/ai-code-review.html" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2305050f'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='42' font-weight='800' fill='%23a78bfa' text-anchor='middle'>DH</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,8 +41,8 @@
           <li class="nav__menu-close">
             <button type="button" class="nav__close-btn" id="nav-close" aria-label="Close menu"><i class="fas fa-times" aria-hidden="true"></i></button>
           </li>
-          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#work">Projects</a></li>
           <li><a href="../index.html#skills">Skills</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
@@ -61,11 +61,11 @@
       <a class="project-page__back" href="../index.html#work"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to work</a>
 
       <header class="project-page__hero">
-        <span class="section-tag">Bachelor Thesis · Systems &amp; Developer Tooling</span>
+        <span class="section-tag">Bachelor’s Thesis · Developer Tooling</span>
         <h1>AI-Powered Code Review Assistant</h1>
         <p>
-          An automated repository inspection platform featuring a Git snapshot rule analyzer, severity scoring algorithm,
-          and a real-time developer dashboard powered by Socket.IO.
+          I built a tool that starts an automated review from a GitHub pull request. It checks the code against predefined
+          rules and shows live progress and structured findings in a React dashboard.
         </p>
         <img class="project-page__cover" src="../code-review.png" alt="AI Code Review Assistant login screen" />
       </header>
@@ -75,46 +75,38 @@
           <section class="project-page__section">
             <h2>Overview</h2>
             <p>
-              This is my Bachelor thesis project: an automated code review and repository inspection system that connects to
-              GitHub via OAuth 2.0 and processes push events via webhooks. The current production engine executes a deterministic
-              repository snapshot analyzer that traverses Git trees and runs weighted static checks across tracked files, with diff heuristic
-              fallbacks.
-            </p>
-            <p>
-              I chose a static heuristic engine over continuous live LLM calls to ensure instant review run times, zero recurring API expenses,
-              and repeatable results for developers. The pipeline architecture is intentionally structured with an extensible analysis interface,
-              making live LLM analysis an easy drop-in provider when cost and product scope permit.
+              I built this project for my bachelor’s thesis to give developers early feedback on recurring issues
+              during code review. Once a repository is connected, a GitHub webhook starts a review when someone
+              opens or reopens a pull request or pushes new commits to it.
             </p>
           </section>
 
           <section class="project-page__section">
-            <h2>The Engineering Problem</h2>
-            <p>
-              Manual code reviews can bottleneck release cycles, while repetitive quality and security violations (unhandled async rejections,
-              exposed credentials, lingering debug statements) easily slip through. Existing commercial tools either require complex infrastructure
-              or run expensive third-party LLM queries on every single commit.
-            </p>
-          </section>
-
-          <section class="project-page__section">
-            <h2>Architecture &amp; Implementation</h2>
-            <p>
-              The system operates as an end-to-end full-stack pipeline:
-            </p>
+            <h2>How a review runs</h2>
             <ul>
-              <li><strong>Ingestion:</strong> GitHub OAuth 2.0 for user authentication and repository access; webhook endpoints capture push events with HMAC signature verification.</li>
-              <li><strong>Job Processing:</strong> Modular queue worker supporting both fast in-process execution and Redis/Bull job queues for distributed workloads.</li>
-              <li><strong>Analysis Engine:</strong> Fetches Git trees and blobs, runs weighted static AST and regex rules across .js, .ts, and .vue files, and computes overall quality and reliability scores.</li>
-              <li><strong>Auto-Remediation:</strong> Targeted fix service (targetedFixService.js) that generates precise source patches (e.g. wrapping unhandled async blocks in try/catch, commenting console statements, annotating secrets).</li>
-              <li><strong>Persistence &amp; Live Updates:</strong> Review runs and issue records are stored in Supabase (PostgreSQL), while progress events stream live to the React dashboard via Socket.IO.</li>
+              <li><strong>Connect GitHub.</strong> Users sign in with GitHub OAuth 2.0 and connect a repository.</li>
+              <li><strong>Queue the review.</strong> The Node.js and Express backend verifies the webhook signature and queues a review for the pull request’s latest commit.</li>
+              <li><strong>Check the code.</strong> A worker fetches supported source files at that commit through the GitHub API and applies static rules.</li>
+              <li><strong>Show the results.</strong> Socket.IO sends live progress to the React dashboard. Supabase stores the review history and findings, including file paths, line numbers, and severity.</li>
             </ul>
           </section>
 
           <section class="project-page__section">
-            <h2>My Role &amp; Contributions</h2>
+            <h2>What the rules engine checks</h2>
             <p>
-              End-to-end ownership across frontend, backend, OAuth security, webhook pipelines, persistence modeling, real-time WebSockets,
-              and production deployment on Render.
+              The engine uses text patterns and heuristics to check supported JavaScript, TypeScript, and Vue files
+              for issues such as debug statements and possible hard-coded secrets. If the repository snapshot is
+              unavailable, the engine applies a separate set of checks to the diff, the lines changed between versions.
+              The dashboard groups the findings and shows a quality score based on their severity.
+            </p>
+          </section>
+
+          <section class="project-page__section">
+            <h2>My contribution</h2>
+            <p>
+              I built the React dashboard and the Node.js and Express backend, including GitHub sign-in, webhook
+              verification, the review queue, and the static checks. I designed the Supabase tables for review history,
+              wired up live updates with Socket.IO, and deployed the app on Render.
             </p>
           </section>
 
@@ -127,19 +119,17 @@
           </section>
 
           <section class="project-page__section">
-            <h2>Key Challenges &amp; Trade-offs</h2>
-            <ul>
-              <li><strong>Deterministic Analysis vs. LLM Cost:</strong> Balancing AI ambition with practical resource limits led to building a high-performance snapshot rule engine first, decoupling rule execution from the analysis interface.</li>
-              <li><strong>Precise Source Patching:</strong> Developing automated remediation logic that modifies only the exact implicated lines without corrupting surrounding AST structures or causing full-file rewrites.</li>
-              <li><strong>Asynchronous State Synchronization:</strong> Ensuring WebSocket broadcasts accurately reflect queue worker status across network re-connections.</li>
-            </ul>
+            <h2>Design decisions</h2>
+            <p>
+              I ran analysis in a background worker so longer reviews wouldn’t hold up the webhook response.
+              I used static checks so each finding could point to the rule it matched and the line that triggered it.
+            </p>
           </section>
 
           <section class="project-page__section">
-            <h2>Results &amp; Future Development</h2>
+            <h2>Future work</h2>
             <p>
-              Successfully deployed on Render with complete GitHub OAuth, live webhook ingestion, real-time dashboard updates, and automated remediation.
-              Future iterations can plug in language model providers for contextual suggestions and automated pull request comments.
+              A future version could add a large language model for suggestions that take more of the surrounding code into account.
             </p>
           </section>
         </div>
@@ -148,7 +138,7 @@
           <h3>Stack</h3>
           <div class="tags">
             <span>Node.js</span><span>Express</span><span>React</span><span>Supabase (PostgreSQL)</span>
-            <span>Socket.IO</span><span>GitHub API</span><span>Redis / Bull</span><span>Vite</span><span>Tailwind</span><span>Render</span>
+            <span>Socket.IO</span><span>GitHub API &amp; Webhooks</span><span>Redis / Bull</span><span>Vite</span><span>Tailwind</span><span>Render</span>
           </div>
           <h3>Links</h3>
           <div class="project-page__links">
@@ -165,6 +155,6 @@
         <p class="footer__copy">&copy; 2026 Dijana Hasani</p>
       </div>
     </footer>
-    <script src="../script.js?v=6"></script>
+    <script src="../script.js?v=7"></script>
   </body>
 </html>

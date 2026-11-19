@@ -136,28 +136,25 @@ const CASE_STUDIES = {
   },
   aireview: {
     title: 'AI-Powered Code Review Assistant',
-    overview: 'Bachelor thesis project: an automated code review platform that connects to GitHub, inspects repositories with a snapshot static rule engine, and streams structured findings to a real-time dashboard.',
-    problem: 'Engineering teams need rapid, consistent automated code feedback in their GitHub pull request workflow without the unpredictable latency and high recurring costs of continuous LLM API calls.',
-    solution: 'Engineered a full-stack platform using Node.js/Express, GitHub OAuth, and webhooks. Designed a deterministic repository snapshot analyzer that evaluates tracked files against weighted static rules and security heuristics. The system architecture provides an extensible interface ready to plug in live LLM analysis providers when required.',
-    role: 'Full Stack Engineer (Bachelor Thesis) — end-to-end system architecture, GitHub OAuth & webhooks pipeline, static heuristic rules engine, Supabase PostgreSQL modeling, Socket.IO live streaming, Bull/Redis job queue worker, and targeted remediation service.',
+    overview: 'A GitHub pull request webhook starts an automated code review. A React dashboard shows live progress and structured findings.',
+    problem: 'Developers can use early feedback on common issues while reviewing pull requests.',
+    solution: 'The Node.js and Express backend queues a review, then a worker checks supported source files at the commit against predefined patterns. If the snapshot is unavailable, the worker checks the diff instead.',
+    role: 'I built the React dashboard, GitHub sign-in and webhook integration, review queue, static checks, and Supabase storage for review history.',
     features: [
-      'GitHub OAuth 2.0 authentication & repository permissions',
-      'Webhook ingestion pipeline for automated push event processing',
-      'Git tree snapshot traversal & static heuristic code analysis',
-      'Categorized findings with severity weights and quality scoring',
-      'Targeted auto-remediation service (AST/regex source patches)',
-      'Real-time review progress streaming via Socket.IO',
-      'Review history, runs, and issue tracking persisted in Supabase',
+      'GitHub OAuth 2.0 sign-in and repository access',
+      'Automatic reviews when pull requests are opened, reopened, or updated with new commits',
+      'Static checks for patterns such as debug statements and possible hard-coded secrets',
+      'Findings with file paths, line numbers, and severity',
+      'Live review progress through Socket.IO and past reviews in Supabase',
     ],
     challenges: [
-      'Architecting a deterministic, cost-effective code analysis pipeline that delivers immediate developer utility without requiring live LLM calls on every push',
-      'Parsing Git snapshot trees efficiently and mapping findings to exact source lines and file contexts',
-      'Coordinating asynchronous webhook handling, queue processing, database persistence, and WebSocket client broadcasts',
+      'Running reviews in a background worker so the webhook can respond promptly',
+      'Keeping dashboard updates in sync with the review queue',
     ],
-    results: 'Deployed full thesis system on Render with GitHub integration, live review dashboard, automated remediation patches, and modular architecture for future AI model expansion.',
-    future: 'Plugging in deep LLM providers for nuanced context analysis, automatic PR comments, and multi-language semantic inspection.',
+    results: 'The app is deployed on Render with GitHub sign-in, automated reviews, and a live dashboard.',
+    future: 'A future version could use a large language model for more context-aware suggestions.',
     tech: ['Node.js', 'Express', 'React', 'Supabase (PostgreSQL)', 'Socket.IO', 'GitHub API & Webhooks', 'Redis / Bull', 'Vite', 'Tailwind CSS', 'Render'],
-    architecture: 'GitHub webhooks trigger an ingestion pipeline; Node.js backend processes review jobs, scans Git trees with static heuristic rules, persists runs to Supabase PostgreSQL, and broadcasts live events to the React client via Socket.IO.',
+    architecture: 'GitHub sends a webhook, Express queues the review, and a worker runs static checks. Supabase stores the results while Socket.IO updates the dashboard.',
     github: PROJECT_LINKS.aiReview.github,
     demo: true,
     demoUrl: PROJECT_LINKS.aiReview.demo,
@@ -228,7 +225,7 @@ function openCaseStudy(id) {
 
 function closeCaseStudy(e) {
   if (e && e.target !== document.getElementById('case-modal')) return;
-  document.getElementById('case-modal').classList.remove('open');
+  document.getElementById('case-modal')?.classList.remove('open');
   document.body.style.overflow = '';
 }
 
